@@ -18,4 +18,13 @@
         android:text="Hello World!"
         android:id="@+id/textView" />
 
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        android:id="@+id/switch1"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/textView"
+        android:checked="false" />
+
 </RelativeLayout>
