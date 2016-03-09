@@ -12,19 +12,13 @@
     tools:context="home.test2.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/textView" />
-
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Test"
         android:id="@+id/switch1"
+        android:checked="false"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/textView"
-        android:checked="false" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
