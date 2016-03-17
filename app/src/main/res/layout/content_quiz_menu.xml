@@ -16,32 +16,35 @@
         android:text="Algebra"
         android:id="@+id/textView" />
 
-    <RadioButton
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/linearequations"
         android:id="@+id/linearequations"
         android:layout_below="@+id/textView"
         android:layout_alignStart="@+id/textView"
-        android:allowUndo="true" />
+        android:onClick="selectSection"
+         />
 
-    <RadioButton
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/algebraicfunctions"
         android:id="@+id/algebraicfunctions"
         android:layout_below="@+id/linearequations"
         android:layout_alignStart="@+id/linearequations"
-        android:allowUndo="true" />
+        android:onClick="selectSection"
+        />
 
-    <RadioButton
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sequencesandseries"
         android:id="@+id/sequencesandseries"
         android:layout_below="@+id/algebraicfunctions"
         android:layout_alignStart="@+id/algebraicfunctions"
-        android:allowUndo="true" />
+        android:onClick="selectSection"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,32 +55,44 @@
         android:layout_below="@+id/sequencesandseries"
         android:layout_alignStart="@+id/sequencesandseries" />
 
-    <RadioButton
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/classofangles"
         android:id="@+id/classofangles"
         android:layout_below="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
-        android:allowUndo="true" />
+        android:onClick="selectSection"
+         />
 
-    <RadioButton
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/measurements"
         android:id="@+id/measurements"
         android:layout_below="@+id/classofangles"
         android:layout_alignStart="@+id/classofangles"
-        android:allowUndo="true" />
+        android:onClick="selectSection"
+         />
 
-    <RadioButton
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/trianglestrig"
         android:id="@+id/trianglestrig"
         android:layout_below="@+id/measurements"
         android:layout_alignStart="@+id/measurements"
-        android:allowUndo="true" />
+        android:onClick="selectSection"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/beginquiz"
+        android:id="@+id/beginquiz"
+        android:layout_below="@+id/trianglestrig"
+        android:layout_alignStart="@+id/trianglestrig"
+        android:onClick="beginQuiz"/>
 
 
 </RelativeLayout>
