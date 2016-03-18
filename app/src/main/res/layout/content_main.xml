@@ -4,33 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="home.test2.MainActivity"
-    tools:showIn="@layout/activity_main"
-    android:background="#b01a1a">
+    android:background="#ffffff"
+    tools:showIn="@layout/activity_main">
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quiz"
-        android:id="@+id/QuizButton"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="55dp"
-        android:background="#c5bd49"
+        android:id="@+id/LessonsButton"
+        android:src="@drawable/lessons"
+        android:background="@null"
+        android:cropToPadding="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/mainScreenCenter"
+        android:layout_alignEnd="@+id/mainScreenCenter"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignWithParentIfMissing="false"
         android:onClick="onClick" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lessons"
-        android:id="@+id/LessonButton"
-        android:layout_alignTop="@+id/QuizButton"
-        android:layout_alignParentEnd="true"
-        android:background="#43dd5f" />
+        android:id="@+id/QuizButton"
+        android:src="@drawable/quiz"
+        android:background="@null"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/mainScreenCenter"
+        android:layout_alignEnd="@+id/mainScreenCenter"
+        android:onClick="onClick"
+        android:nestedScrollingEnabled="false" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainScreenCenter"
+        android:src="@drawable/mainscreencenter"
+        android:layout_alignWithParentIfMissing="false"
+        android:adjustViewBounds="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:clickable="true" />
 
 </RelativeLayout>

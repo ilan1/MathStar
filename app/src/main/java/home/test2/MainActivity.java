@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,14 +21,23 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button quizbutton = (Button) findViewById(R.id.QuizButton);
-        quizbutton.setOnClickListener(new View.OnClickListener(){
-                public void onClick(View v) {
-                    Intent i = new Intent(MainActivity.this, QuizMenu.class);
-                    startActivity(i);
-                }
+        ImageButton quizbutton = (ImageButton) findViewById(R.id.QuizButton);
+        quizbutton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, QuizMenu.class);
+                startActivity(i);
+            }
 
-    } );
+        });
+
+        ImageButton lessonbutton = (ImageButton) findViewById(R.id.LessonsButton);
+        lessonbutton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, QuizMenu.class);
+                startActivity(i);
+            }
+
+        } );
     }
 
 
