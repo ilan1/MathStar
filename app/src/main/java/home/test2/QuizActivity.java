@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -22,6 +23,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button submitButton;
     TextView questionView;
     ArrayList<String> sections;
+    int correct = 0;
     private int currentQuestion = 0;
     List<Question> data = Data.getInstance().getData();
     int[] quiznums = new int[10];
@@ -103,16 +105,29 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // check(); add check() method to keep track of answers
+                check();
+                showNextQuestion();
                 //showNextQuestion ?
             }
         });
     }
 
-
-
+    public void showNextQuestion(){
+        currentQuestion++;
+        if(currentQuestion == 10){
+            questionView.setText("Congrats you got " + correct + " questions correct");
+        }
+        else
+        {showQuestion();}
+    }
+    public void check(){
+        EditText d = (EditText)findViewById(R.id.answerText);
+        if(d.getText().toString().equals(data.get(quiznums[currentQuestion]).getAnswer()))
+        {correct++;}
+    }
     /*displays questions*/
     public void showQuestion(){
-        currentQuestion++;
+
         questionView.setText(data.get(quiznums[currentQuestion]).getProblem());
     }
 
