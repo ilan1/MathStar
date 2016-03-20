@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-
+import android.widget.Toast;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,14 +32,17 @@ public class QuizMenu extends AppCompatActivity {
         quizButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-
                 /*passes the list of selected sections to the QuizActivity class*/
                 Bundle passSections = new Bundle();
                 Intent i = new Intent(QuizMenu.this, QuizActivity.class);
                 i.putStringArrayListExtra("sectionArray", sections);
-                startActivity(i);
+                if(sections.size() == 0){
+                    Toast.makeText(getApplicationContext(), "You must select at least 1 chapter.", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    startActivity(i);
+                }
             }
-
         });
     }
 

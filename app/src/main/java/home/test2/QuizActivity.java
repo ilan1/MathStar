@@ -51,13 +51,9 @@ public class QuizActivity extends AppCompatActivity {
                 if (hold == alreadyChosen[j]) {
                     safe = false;
                 }
-
-
             }
 
             if (safe) {
-
-
 
                 if (sections.contains("Linear Equations") && hold >= 0 && hold <= 14) {
                     quiznums[i] = hold; alreadyChosen[i] = hold;
@@ -94,14 +90,8 @@ public class QuizActivity extends AppCompatActivity {
                     Log.v("END",""+hold);
                     i++;
                 }
-
-
-
-
             }
         }
-
-
         initialize();
     }
 
@@ -113,6 +103,12 @@ public class QuizActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(submitButton.getText() == "Done"){
+                    //navigate to quiz selection page
+                    Intent i = new Intent(QuizActivity.this, QuizMenu.class);
+                    startActivity(i);
+                    return;
+                }
                 // check(); add check() method to keep track of answers
                 check();
                 showNextQuestion();
@@ -125,8 +121,11 @@ public class QuizActivity extends AppCompatActivity {
         EditText d = (EditText)findViewById(R.id.answerText);
         d.setText("");
         currentQuestion++;
+        Log.v("currentQuestion = ", ""+currentQuestion);
         if(currentQuestion == 10){
-            questionView.setText("Congrats you got " + correct + " questions correct");
+            questionView.setText("Congrats you got " + correct + " questions correct.");
+            submitButton.setText("Done");
+            d.setVisibility(View.GONE);
         }
         else
         {showQuestion();}
