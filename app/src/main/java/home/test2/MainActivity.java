@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         /*parse xml*/
         try {
-            List<Question> questions = new XMLPullParser().parse(getAssets().open("temp.xml"));
+            List<Question> questions = new XMLPullParser().parse(getAssets().open("questions.xml"));
             Data.getInstance().setData(questions);
         }catch (Exception e){
             e.printStackTrace();
