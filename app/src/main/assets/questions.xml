@@ -1,0 +1,137 @@
+<questions>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	4(x + 1) = 16	</problem>	<answer>	3	</answer>	<id>	1	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	2x + 1 = 5	</problem>	<answer>	1	</answer>	<id>	2	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	4x - 3x + 13 = 7	</problem>	<answer>	-6	</answer>	<id>	3	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	10x - 6x = 16	</problem>	<answer>	4	</answer>	<id>	4	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	2 = -2(x + 8)	</problem>	<answer>	-9	</answer>	<id>	5	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	(x-8) /2 = 10	</problem>	<answer>	10	</answer>	<id>	6	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	-16 = -4x - 60	</problem>	<answer>	-11	</answer>	<id>	7	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	(x+8) / -2 = 1	</problem>	<answer>	-10	</answer>	<id>	8	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	3x - 5 + x = -1	</problem>	<answer>	1	</answer>	<id>	9	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	20x - 15 = 45	</problem>	<answer>	3	</answer>	<id>	10	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	2x + x + 5 = 32	</problem>	<answer>	9	</answer>	<id>	11	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	2x -4 = 6	</problem>	<answer>	5	</answer>	<id>	12	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	84 = 21x - 7x	</problem>	<answer>	6	</answer>	<id>	13	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	114 - 6x = 48	</problem>	<answer>	11	</answer>	<id>	14	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Linear Equations	</section>	<problem>	4x + 22 = 2x	</problem>	<answer>	-11	</answer>	<id>	15	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Algebraic Functions	</section>	<problem>	f(x) = x + 22 Solve f(8)	</problem>	<answer>	30	</answer>	<id>	16	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Algebraic Functions	</section>	<problem>	f(x)=9x, f(x)=x−6x2 What whole number solves this system?	</problem>	<answer>	0	</answer>	<id>	17	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Algebraic Functions	</section>	<problem>	f(x) = 4x + 16x Solve f(4)	</problem>	<answer>	80	</answer>	<id>	18	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Algebraic Functions	</section>	<problem>	f(x,y) = 3x + 4y Solve for f(3,4)	</problem>	<answer>	25	</answer>	<id>	19	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Algebraic Functions	</section>	<problem>	f(x) = 2x+4 Solve for f(5)	</problem>	<answer>	14	</answer>	<id>	20	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Algebraic Functions	</section>	<problem>	f(y) = (y -6) + 3y Solve for f(6)	</problem>	<answer>	18	</answer>	<id>	21	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Algebraic Functions	</section>	<problem>	f(x) = (5x + 10) / (25x - 22x) Solve for f(10)	</problem>	<answer>	2	</answer>	<id>	22	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Algebraic Functions	</section>	<problem>	F(x,y) = xy + 20y Solve for f(4,7)	</problem>	<answer>	168	</answer>	<id>	23	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Algebraic Functions	</section>	<problem>	f(x) = 4x / x Solve for f(8)	</problem>	<answer>	4	</answer>	<id>	24	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Algebraic Functions	</section>	<problem>	f(x) = 18 + 6x - 6x Solve for f(500000)	</problem>	<answer>	18	</answer>	<id>	25	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Sequences and Series	</section>	<problem>	f(x) = {1, 3, 5, 7, 9} what is f(3)?	</problem>	<answer>	5	</answer>	<id>	26	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Sequences and Series	</section>	<problem>	f(x) = {1,2,3,4,5,6,7} What is f(2) + f(4)?	</problem>	<answer>	6	</answer>	<id>	27	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Sequences and Series	</section>	<problem>	If a series has the rule  x = 2n+1 , What would be the eighth value in the series?	</problem>	<answer>	17	</answer>	<id>	28	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Sequences and Series	</section>	<problem>	If you have a sequence of {1, 3, 5, 7, ...} , What is the partial sum of the first 3 values?	</problem>	<answer>	9	</answer>	<id>	29	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Sequences and Series	</section>	<problem>	"What number does the sequence  {0.5,0.75, 0.875,0.9375,0.96875} converge to?
+        "	</problem>	<answer>	1	</answer>	<id>	30	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Sequences and Series	</section>	<problem>	f(x) = {1, 3, 5, 7, 9,4,66,7,8,7,54,3} what is f(7) / f(1)?	</problem>	<answer>	66	</answer>	<id>	31	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Sequences and Series	</section>	<problem>	What is the sum of the sequence {−1,2,5,8,11,14}?	</problem>	<answer>	39	</answer>	<id>	32	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Sequences and Series	</section>	<problem>	Based on common difference, what would be the 4th term of this sequence {6,14,22}?	</problem>	<answer>	30	</answer>	<id>	33	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Sequences and Series	</section>	<problem>	What is the common difference in the sequence {1,-7,-15,-23,-31,-39,-47,-55,-63	</problem>	<answer>	-8	</answer>	<id>	34	</id>	</question>
+
+    <question>	<subject>	Algebra	</subject>	<section>	Sequences and Series	</section>	<problem>	f(x) = {1,2,21,3,4,-33,-2,5,6,7} What is f(6) + f(5)?	</problem>	<answer>	29	</answer>	<id>	35	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Classification of Angles	</section>	<problem>	A 180 degree angle is classified as	</problem>	<answer>	Straight	</answer>	<id>	36	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Classification of Angles	</section>	<problem>	A 42 degree angle is classified as	</problem>	<answer>	Acute	</answer>	<id>	37	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Classification of Angles	</section>	<problem>	A 90 degree angle is classified as	</problem>	<answer>	Right	</answer>	<id>	38	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Classification of Angles	</section>	<problem>	A 100 degree angle is classified as 	</problem>	<answer>	Obtuse	</answer>	<id>	39	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Classification of Angles	</section>	<problem>	Straight lines are always what type of angle?	</problem>	<answer>	Straight	</answer>	<id>	40	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Classification of Angles	</section>	<problem>	A 100 degree angle is classified as 	</problem>	<answer>	Obtuse	</answer>	<id>	41	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Classification of Angles	</section>	<problem>	A 172 degree angle is classified as 	</problem>	<answer>	Obtuse	</answer>	<id>	42	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Classification of Angles	</section>	<problem>	A 91 degree angle is classified as	</problem>	<answer>	Acute	</answer>	<id>	43	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Classification of Angles	</section>	<problem>	A 45 degree angle is classified as	</problem>	<answer>	Acute	</answer>	<id>	44	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Classification of Angles	</section>	<problem>	A 1 degree angle is classified as 	</problem>	<answer>	Acute	</answer>	<id>	45	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Perimeters, Area, and Volume	</section>	<problem>	A rectangle has a width of 4 inches and a length of 7 inches.  What is the perimeter?	</problem>	<answer>	22	</answer>	<id>	46	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Perimeters, Area, and Volume	</section>	<problem>	A rectangle has a width of 4 inches and a length of 7 inches.  What is the area?	</problem>	<answer>	28	</answer>	<id>	47	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Perimeters, Area, and Volume	</section>	<problem>	A square has a side that is 5 inches long. What is the perimeter?	</problem>	<answer>	20	</answer>	<id>	48	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Perimeters, Area, and Volume	</section>	<problem>	A square has a side that is 5 inches long. What is the area?	</problem>	<answer>	25	</answer>	<id>	49	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Perimeters, Area, and Volume	</section>	<problem>	A side pf a pentagon is 6 inches. What is the perimeter?	</problem>	<answer>	30	</answer>	<id>	50	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Perimeters, Area, and Volume	</section>	<problem>	A right triangle has a base of 15 inches and a height of 8 inches. What is the area?	</problem>	<answer>	60	</answer>	<id>	51	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Perimeters, Area, and Volume	</section>	<problem>	A trapezoid has sides of length 14,17,8, and 10.  What is the perimeter?	</problem>	<answer>	49	</answer>	<id>	52	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Perimeters, Area, and Volume	</section>	<problem>	A square has a perimeter of 36, What is the length of one side?	</problem>	<answer>	9	</answer>	<id>	53	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Perimeters, Area, and Volume	</section>	<problem>	A square has a area of 81, What is the length of one side?	</problem>	<answer>	9	</answer>	<id>	54	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Perimeters, Area, and Volume	</section>	<problem>	A cube has an edge of length 4 inches, What is the area of the cube?	</problem>	<answer>	96	</answer>	<id>	55	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Trigonometry and Triangle	</section>	<problem>	A ladder leans against a building.  The foot of the ladder is 6 feet from the building.  The ladder reaches a height of 14 feet on the building. Find the length of the ladder to the nearest foot.	</problem>	<answer>	15	</answer>	<id>	56	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Trigonometry and Triangle	</section>	<problem>	 A ladder leans against a building.  The foot of the ladder is 6 feet from the building.  The ladder reaches a height of 14 feet on the building. Find to the nearest degree, the angle the ladder makes with the ground.	</problem>	<answer>	67	</answer>	<id>	57	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Trigonometry and Triangle	</section>	<problem>	From a point on the ground 25 feet from the foot of a tree, the angle of elevation of the top of the tree is 32º.  Find to the nearest foot, the height of the tree.	</problem>	<answer>	16	</answer>	<id>	58	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Trigonometry and Triangle	</section>	<problem>	From the top of a barn 25 feet tall, you see a cat on the ground.  The angle of depression of the cat is 40º.  How many feet, to the nearest foot, must the cat walk to reach the barn?	</problem>	<answer>	30	</answer>	<id>	59	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Trigonometry and Triangle	</section>	<problem>	A five-meter-long ladder leans against a wall, with the top of the ladder being four meters above the ground. What is the approximate angle that the ladder makes with the ground?	</problem>	<answer>	53	</answer>	<id>	60	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Trigonometry and Triangle	</section>	<problem>	A ladder leans against a building.  The foot of the ladder is 10 feet from the building.  The ladder reaches a height of 3 feet on the building. Find the length of the ladder to the nearest foot.	</problem>	<answer>	10	</answer>	<id>	61	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Trigonometry and Triangle	</section>	<problem>	A ladder leans against a building.  The foot of the ladder is 10 feet from the building.  The ladder reaches a height of 14 feet on the building. Find the length of the ladder to the nearest foot.	</problem>	<answer>	17	</answer>	<id>	62	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Trigonometry and Triangle	</section>	<problem>	A right triangle has an angle of what degree	</problem>	<answer>	90	</answer>	<id>	63	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Trigonometry and Triangle	</section>	<problem>	What is the max angle of an acute triangle	</problem>	<answer>	89	</answer>	<id>	64	</id>	</question>
+
+    <question>	<subject>	Geometry	</subject>	<section>	Trigonometry and Triangle	</section>	<problem>	What is the minimum angle of an obtuse triangle?	</problem>	<answer>	91	</answer>	<id>	65	</id>	</question>
+
+
+
+</questions>
+
