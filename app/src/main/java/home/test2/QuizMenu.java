@@ -21,6 +21,8 @@ public class QuizMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
+
+        getIntent().removeExtra("sectionArray");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -29,11 +31,12 @@ public class QuizMenu extends AppCompatActivity {
         Button quizButton = (Button) findViewById(R.id.beginquiz);
         quizButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(QuizMenu.this, QuizActivity.class);
+
 
                 /*passes the list of selected sections to the QuizActivity class*/
                 Bundle passSections = new Bundle();
-                i.putExtra("sectionArray", sections);
+                Intent i = new Intent(QuizMenu.this, QuizActivity.class);
+                i.putStringArrayListExtra("sectionArray", sections);
                 startActivity(i);
             }
 
@@ -53,36 +56,42 @@ public class QuizMenu extends AppCompatActivity {
                 else{
                     sections.remove("Linear Equations");
                     break;}
+                break;
             case R.id.algebraicfunctions:
                 if(checked){
                 sections.add("Algebraic Functions");}
                 else{
                     sections.remove("Algebraic Functions");
                     break;}
+                break;
             case R.id.sequencesandseries:
                 if(checked){
                     sections.add("Sequences and Series");}
                 else{
                     sections.remove("Sequences and Series");
                     break;}
+                break;
             case R.id.classofangles:
                 if(checked){
                     sections.add("Classification of Angles");}
                 else{
                     sections.remove("Classification of Angles");
                     break;}
+                break;
             case R.id.measurements:
                 if(checked){
                     sections.add("Measurements of Perimeters, Area, and Volume");}
                 else{
                     sections.remove("Measurements of Perimeters, Area, and Volume");
                     break;}
+                break;
             case R.id.trianglestrig:
                 if(checked){
                     sections.add("Right Triangles and Trigonometry");}
                 else{
                     sections.remove("Right Triangles and Trigonometry");
                     break;}
+                break;
 
         }
     }

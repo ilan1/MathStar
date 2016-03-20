@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +37,7 @@ public class QuizActivity extends AppCompatActivity {
         /*retrieves arraylist of sections from QuizMenu class*/
         Intent quizIntent = getIntent();
         sections = quizIntent.getStringArrayListExtra("sectionArray");
-
+        Log.v("sections",sections.toString());
         Random r = new Random();
         int[] alreadyChosen = new int[10];
             int hold;
