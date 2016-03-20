@@ -8,6 +8,7 @@ public class Question {
     private String section;
     private String problem;
     private String answer;
+    private String id;
 
     public void setSubject(String subject){
         this.subject = subject;
@@ -24,18 +25,28 @@ public class Question {
     }
 
     public void setProblem(String problem){
-        this.section = problem;
+        this.problem = problem;
     }
     public String getProblem(String problem){
         return problem;
     }
 
     public void setAnswer(String answer){
-        this.section = section;
+        this.answer = answer;
     }
     public String getAnswer(String answer){
         return answer;
     }
 
+    public void setId(String id){
+        this.id = id;
+    }
+    public int getId(int id){
+        return id;
+    }
+
+    public String toString(){
+        return id +": " + subject + "-" + section + "-" + problem + "=" + answer;
+    }
 
 }

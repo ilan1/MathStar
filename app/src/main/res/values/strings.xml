@@ -11,4 +11,5 @@
     <string name="measurements">Measurements of Perimeters, Area, and Volume</string>
     <string name="trianglestrig">Right Triangles and Trigonometry</string>
     <string name="beginquiz">Begin Quiz</string>
+    <string name="title_activity_quiz">QuizActivity</string>
 </resources>
