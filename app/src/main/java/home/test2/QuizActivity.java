@@ -37,7 +37,7 @@ public class QuizActivity extends AppCompatActivity {
         /*retrieves arraylist of sections from QuizMenu class*/
         Intent quizIntent = getIntent();
         sections = quizIntent.getStringArrayListExtra("sectionArray");
-        Log.v("sections",sections.toString());
+        Log.v("sections", sections.toString());
         Random r = new Random();
         int[] alreadyChosen = new int[10];
             int hold;
@@ -57,36 +57,45 @@ public class QuizActivity extends AppCompatActivity {
 
             if (safe) {
 
-                if (sections.contains("Linear Equations") && hold >= 0 && hold <= 14) {
-                    quiznums[i] = hold; alreadyChosen[i] = hold; 
 
+
+                if (sections.contains("Linear Equations") && hold >= 0 && hold <= 14) {
+                    quiznums[i] = hold; alreadyChosen[i] = hold;
+                    Log.v("LE",""+hold);
                     i++;
                 }
                 
                 else if (sections.contains("Algebraic Functions") && hold >= 15 && hold <= 24) {
                     quiznums[i] = hold; alreadyChosen[i] = hold;
+                    Log.v("AF",""+hold);
                     i++;
                 }
 
                 else if (sections.contains("Sequences and Series") && hold >= 25 && hold <= 34) {
                     quiznums[i] = hold; alreadyChosen[i] = hold;
+                    Log.v("SS",""+hold);
                     i++;
                 }
 
                 else if (sections.contains("Classification of Angles") && hold >= 35 && hold <= 44) {
                     quiznums[i] = hold; alreadyChosen[i] = hold;
+                    Log.v("CA",""+hold);
                     i++;
                 }
 
                 else if (sections.contains("Measurements of Perimeters, Area, and Volume") && hold >= 45 && hold <= 54) {
                     quiznums[i] = hold; alreadyChosen[i] = hold;
+                    Log.v("MPAV",""+hold);
                     i++;
                 }
 
-                else /* (sections.contains("Right Triangles and Trigonometry") && hold >= 55 && hold <= 64)*/ {
+                else if  (sections.contains("Right Triangles and Trigonometry") && hold >= 55 && hold <= 64) {
                     quiznums[i] = hold; alreadyChosen[i] = hold;
+                    Log.v("END",""+hold);
                     i++;
                 }
+
+
 
 
             }
@@ -113,6 +122,8 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void showNextQuestion(){
+        EditText d = (EditText)findViewById(R.id.answerText);
+        d.setText("");
         currentQuestion++;
         if(currentQuestion == 10){
             questionView.setText("Congrats you got " + correct + " questions correct");
@@ -122,7 +133,7 @@ public class QuizActivity extends AppCompatActivity {
     }
     public void check(){
         EditText d = (EditText)findViewById(R.id.answerText);
-        if(d.getText().toString().equals(data.get(quiznums[currentQuestion]).getAnswer()))
+        if(d.getText().toString().equalsIgnoreCase(data.get(quiznums[currentQuestion]).getAnswer()))
         {correct++;}
     }
     /*displays questions*/
