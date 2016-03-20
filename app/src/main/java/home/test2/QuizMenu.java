@@ -30,6 +30,10 @@ public class QuizMenu extends AppCompatActivity {
         quizButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(QuizMenu.this, QuizActivity.class);
+
+                /*passes the list of selected sections to the QuizActivity class*/
+                Bundle passSections = new Bundle();
+                i.putExtra("sectionArray", sections);
                 startActivity(i);
             }
 
