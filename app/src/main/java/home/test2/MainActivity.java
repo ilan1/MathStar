@@ -52,15 +52,13 @@ public class MainActivity extends AppCompatActivity {
         /*parse xml*/
         try {
             List<Question> questions = new XMLPullParser().parse(getAssets().open("temp.xml"));
-
+            Data.getInstance().setData(questions);
         }catch (Exception e){
             e.printStackTrace();
             Log.e("mathstar", e.getMessage());
         }
+
     }
-
-
-
 
 
     @Override

@@ -20,28 +20,28 @@ public class Question {
     public void setSection(String section){
         this.section = section;
     }
-    public String getSection(String section){
+    public String getSection(){
         return section;
     }
 
     public void setProblem(String problem){
         this.problem = problem;
     }
-    public String getProblem(String problem){
+    public String getProblem(){
         return problem;
     }
 
     public void setAnswer(String answer){
         this.answer = answer;
     }
-    public String getAnswer(String answer){
+    public String getAnswer(){
         return answer;
     }
 
     public void setId(String id){
         this.id = id;
     }
-    public int getId(int id){
+    public String getId(){
         return id;
     }
 

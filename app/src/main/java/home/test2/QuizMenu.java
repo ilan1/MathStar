@@ -1,5 +1,6 @@
 package home.test2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.widget.Button;
 import android.widget.CheckBox;
 
 public class QuizMenu extends AppCompatActivity {
@@ -23,7 +25,18 @@ public class QuizMenu extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Button quizButton = (Button) findViewById(R.id.beginquiz);
+        quizButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(QuizMenu.this, QuizActivity.class);
+                startActivity(i);
+            }
+
+        });
     }
+
+
 
     /*saves section selection settings from checkboxes*/
     public void selectSection(View v){
@@ -68,10 +81,5 @@ public class QuizMenu extends AppCompatActivity {
                     break;}
 
         }
-    }
-
-    /*onClick beginQuiz*/
-    public void beginQuiz(View v){
-
     }
 }
