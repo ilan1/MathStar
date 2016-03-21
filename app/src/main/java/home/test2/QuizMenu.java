@@ -19,6 +19,9 @@ import android.widget.CheckBox;
 public class QuizMenu extends AppCompatActivity {
     ArrayList<String> sections = new ArrayList<String>();
 
+    //A class-name tag for any Log calls
+    private String tag = getClass().getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
 

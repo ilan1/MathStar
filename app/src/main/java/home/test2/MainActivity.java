@@ -19,6 +19,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    //A class-name tag for any Log calls
+    private String tag = getClass().getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -53,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             Data.getInstance().setData(questions);
         }catch (Exception e){
             e.printStackTrace();
-            Log.e("mathstar", e.getMessage());
+            Log.e(tag, e.getMessage());
         }
 
     }

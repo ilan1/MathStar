@@ -18,6 +18,15 @@ public class XMLPullParser {
     private XmlPullParserFactory xmlFactoryObject;
     private XmlPullParser parser;
 
+    //A class-name tag for any Log calls
+    private String tag = getClass().getSimpleName();
+
+    /**
+     * Parse xml data into a List of Question objects
+     * @param stream an input stream from an xml source
+     * @return List<Question>
+     * @throws Exception
+     */
     public List<Question> parse(InputStream stream) throws Exception{
         xmlFactoryObject = XmlPullParserFactory.newInstance();
         parser = xmlFactoryObject.newPullParser();
@@ -52,7 +61,7 @@ public class XMLPullParser {
                     currentAttribute = "subject";
                 }
                 else {
-                    Log.i("mathstar", "Unexpected tag: " + parser.getName());
+                    Log.i(tag, "Unexpected tag: " + parser.getName());
                 }
              }
             else if(event == XmlPullParser.END_TAG) {
@@ -61,7 +70,7 @@ public class XMLPullParser {
                 }
             }
             else if(event == XmlPullParser.TEXT) {
-                Log.i("mathstar", parser.getText());
+                Log.i(tag, parser.getText());
                 if(currentAttribute.equals("section")) {
                     question.setSection(parser.getText());
                 }
