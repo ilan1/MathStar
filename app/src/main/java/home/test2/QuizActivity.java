@@ -76,7 +76,7 @@ public class QuizActivity extends AppCompatActivity {
                     quiznums[i] = hold; alreadyChosen[i] = hold;
 
                     Log.v(tag + " LE", ""+hold);
-                    
+
                     i++;
 
                     leNum++;
@@ -95,12 +95,8 @@ public class QuizActivity extends AppCompatActivity {
                 
                 else if (sections.contains("Algebraic Functions") && hold >= 15 && hold <= 24 && afMax) {
                     quiznums[i] = hold; alreadyChosen[i] = hold;
-<<<<<<< HEAD
                     Log.v(tag + " AF", ""+hold);
-=======
-                    Log.v("AF",""+hold);
 
->>>>>>> a2f3fd8e0c17bbc12601df3df49d617125f4d83f
                     i++;
 
                     afNum++;
@@ -118,12 +114,9 @@ public class QuizActivity extends AppCompatActivity {
 
                 else if (sections.contains("Sequences and Series") && hold >= 25 && hold <= 34 && ssMax) {
                     quiznums[i] = hold; alreadyChosen[i] = hold;
-<<<<<<< HEAD
-                    Log.v(tag + " SS", ""+hold);
-=======
-                    Log.v("SS",""+hold);
 
->>>>>>> a2f3fd8e0c17bbc12601df3df49d617125f4d83f
+                    Log.v(tag + " SS", ""+hold);
+
                     i++;
 
                     ssNum++;
@@ -142,12 +135,8 @@ public class QuizActivity extends AppCompatActivity {
 
                 else if (sections.contains("Classification of Angles") && hold >= 35 && hold <= 44 && caMax) {
                     quiznums[i] = hold; alreadyChosen[i] = hold;
-<<<<<<< HEAD
                     Log.v(tag + " CA", ""+hold);
-=======
-                    Log.v("CA",""+hold);
 
->>>>>>> a2f3fd8e0c17bbc12601df3df49d617125f4d83f
                     i++;
 
                     caNum++;
@@ -159,7 +148,7 @@ public class QuizActivity extends AppCompatActivity {
                     {caMax = false;}
                     if(sections.size() >=2 && caNum >= 5)
                     {caMax = false;}
-                    Log.v("camax", ""+caMax);
+                    Log.v(tag + " camax", ""+caMax);
 
                 }
 
@@ -177,7 +166,7 @@ public class QuizActivity extends AppCompatActivity {
                     {mpavMax = false;}
                     if(sections.size() >=2 && mpavNum >= 5)
                     {mpavMax = false;}
-                    Log.v("mpavmax", ""+mpavMax);
+                    Log.v(tag + " mpavmax", ""+mpavMax);
 
                 }
 
@@ -196,7 +185,7 @@ public class QuizActivity extends AppCompatActivity {
                     if(sections.size() >=2 && endNum >= 5)
                     {endMax = false;}
 
-                    Log.v("endmax", ""+endMax);
+                    Log.v(tag + " endmax", ""+endMax);
 
                 }
             }
