@@ -231,6 +231,13 @@ public class QuizActivity extends AppCompatActivity {
 
         Log.v(tag + " currentQuestion", "" + currentQuestion);
         if(currentQuestion == 10){
+            int leNum, afNum, ssNum, caNum, mpavNum, endNum = 0;
+            boolean leMax = true;
+            boolean afMax = true;
+            boolean ssMax = true;
+            boolean caMax = true;
+            boolean mpavMax = true;
+            boolean endMax = true;
             questionView.setText("Congrats you got " + correct + " questions correct.");
             submitButton.setText("Done");
             d.setVisibility(View.GONE);
