@@ -13,5 +13,10 @@ public class Data {
     }
 
     private static final Data holder = new Data();
+
+    /**
+     * A Singleton accessor
+     * @return the Singleton instance of Data
+     */
     public static Data getInstance() {return holder;}
 }

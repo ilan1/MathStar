@@ -22,9 +22,9 @@ public class XMLPullParser {
     private String tag = getClass().getSimpleName();
 
     /**
-     * Parse xml data into a List of Question objects
-     * @param stream an input stream from an xml source
-     * @return List<Question>
+     * Parses xml data into a List of Question objects
+     * @param stream  an input stream from an xml source
+     * @return the list of question objects
      * @throws Exception
      */
     public List<Question> parse(InputStream stream) throws Exception{

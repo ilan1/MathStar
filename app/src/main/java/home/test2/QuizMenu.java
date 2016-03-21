@@ -49,9 +49,10 @@ public class QuizMenu extends AppCompatActivity {
         });
     }
 
-
-
-    /*saves section selection settings from checkboxes*/
+    /**
+     * Saves section selection settings from checkboxes
+     * @param v - a view that encapsulates checkboxes
+     */
     public void selectSection(View v){
         boolean checked = ((CheckBox) v).isChecked();
         switch(v.getId())

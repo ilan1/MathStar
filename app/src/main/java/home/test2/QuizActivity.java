@@ -70,7 +70,7 @@ public class QuizActivity extends AppCompatActivity {
 
             if (safe) {
 
-                    Log.v("total", ""+leMax+" "+ afMax+ " "+ ssMax + " " +caMax+" "+ mpavMax+ " "+ endMax);
+                    Log.v(tag + " total", ""+leMax+" "+ afMax+ " "+ ssMax + " " +caMax+" "+ mpavMax+ " "+ endMax);
 
                 if (sections.contains("Linear Equations") && hold >= 0 && hold <= 14 && leMax) {
                     quiznums[i] = hold; alreadyChosen[i] = hold;
@@ -89,7 +89,7 @@ public class QuizActivity extends AppCompatActivity {
                     if(sections.size() >=2 && leNum >= 5)
                     {leMax = false;}
 
-                    Log.v("lemax", ""+leMax);
+                    Log.v(tag + " lemax", ""+leMax);
 
                 }
                 
@@ -108,7 +108,7 @@ public class QuizActivity extends AppCompatActivity {
                     {afMax = false;}
                     if(sections.size() >=2 && afNum >= 5)
                     {afMax = false;}
-                    Log.v("afmax", ""+afMax);
+                    Log.v(tag + " afmax", ""+afMax);
 
                 }
 
@@ -129,7 +129,7 @@ public class QuizActivity extends AppCompatActivity {
                     if(sections.size() >=2 && ssNum >= 5)
                     {ssMax = false;}
                     
-                    Log.v("ssmax", ""+ssMax);
+                    Log.v(tag + " ssmax", ""+ssMax);
 
                 }
 
@@ -193,7 +193,9 @@ public class QuizActivity extends AppCompatActivity {
         initialize();
     }
 
-    /*starts quiz by setting up view*/
+    /**
+     * Starts quiz by setting up view
+     */
     public void initialize(){
         submitButton = (Button) findViewById(R.id.submitButton);
         questionView = (TextView) findViewById(R.id.questionView);
@@ -215,6 +217,9 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Clears the text field and shows the next question
+     */
     public void showNextQuestion(){
         EditText d = (EditText)findViewById(R.id.answerText);
         d.setText("");
@@ -233,7 +238,10 @@ public class QuizActivity extends AppCompatActivity {
         if (d.getText().toString().equalsIgnoreCase(data.get(quiznums[currentQuestion]).getAnswer()))
         {correct++;}
     }
-    /*displays questions*/
+
+    /**
+     * Displays questions
+     */
     public void showQuestion(){
 
         questionView.setText(data.get(quiznums[currentQuestion]).getProblem());
