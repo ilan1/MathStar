@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -224,6 +225,10 @@ public class QuizActivity extends AppCompatActivity {
         EditText d = (EditText)findViewById(R.id.answerText);
         d.setText("");
         currentQuestion++;
+
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setProgress(currentQuestion * 10);
+
         Log.v(tag + " currentQuestion", "" + currentQuestion);
         if(currentQuestion == 10){
             questionView.setText("Congrats you got " + correct + " questions correct.");

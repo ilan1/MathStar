@@ -32,4 +32,14 @@
         android:id="@+id/submitButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="51dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        style="@android:style/Widget.ProgressBar.Horizontal"/>
 </RelativeLayout>
