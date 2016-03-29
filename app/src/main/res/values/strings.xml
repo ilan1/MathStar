@@ -12,4 +12,5 @@
     <string name="trianglestrig">Right Triangles and Trigonometry</string>
     <string name="beginquiz">Begin Quiz</string>
     <string name="title_activity_quiz">QuizActivity</string>
+    <string name="title_activity_balloon_game">BalloonGame</string>
 </resources>
