@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-public class QuizMenu extends AppCompatActivity {
+public class LessonMenu extends AppCompatActivity {
     ArrayList<String> sections = new ArrayList<String>();
 
     //A class-name tag for any Log calls
@@ -33,7 +33,10 @@ public class QuizMenu extends AppCompatActivity {
 
                 /*passes the list of selected sections to the QuizActivity class*/
                 Bundle passSections = new Bundle();
-                Intent i = new Intent(QuizMenu.this, QuizActivity.class);
+
+                /*we'll want an if statement somewhere here to go to the correct game*/
+                Intent i = new Intent(LessonMenu.this, BalloonGame.class);
+
                 i.putStringArrayListExtra("sectionArray", sections);
                 if(sections.size() == 0){
                     Toast.makeText(getApplicationContext(), "You must select at least 1 chapter.", Toast.LENGTH_LONG).show();
@@ -62,7 +65,7 @@ public class QuizMenu extends AppCompatActivity {
                 break;
             case R.id.algebraicfunctions:
                 if(checked){
-                sections.add("Algebraic Functions");}
+                    sections.add("Algebraic Functions");}
                 else{
                     sections.remove("Algebraic Functions");
                     break;}

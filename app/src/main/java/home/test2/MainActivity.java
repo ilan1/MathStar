@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton lessonbutton = (ImageButton) findViewById(R.id.LessonsButton);
         lessonbutton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, BalloonGame.class);
+                Intent i = new Intent(MainActivity.this, LessonMenu.class);
                 startActivity(i);
             }
 

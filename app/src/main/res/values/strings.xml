@@ -13,4 +13,5 @@
     <string name="beginquiz">Begin Quiz</string>
     <string name="title_activity_quiz">QuizActivity</string>
     <string name="title_activity_balloon_game">BalloonGame</string>
+    <string name="title_activity_lesson_menu">LessonMenu</string>
 </resources>
