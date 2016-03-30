@@ -27,9 +27,11 @@
             android:label="@string/title_activity_quiz"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:screenOrientation="landscape"
             android:name=".BalloonGame"
             android:label="@string/title_activity_balloon_game"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".LessonMenu"
             android:label="@string/title_activity_lesson_menu"
