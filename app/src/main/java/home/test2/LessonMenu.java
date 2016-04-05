@@ -23,12 +23,12 @@ public class LessonMenu extends AppCompatActivity {
 
         getIntent().removeExtra("sectionArray");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_menu);
+        setContentView(R.layout.activity_lesson_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button quizButton = (Button) findViewById(R.id.beginquiz);
-        quizButton.setOnClickListener(new View.OnClickListener() {
+       Button lessonButton = (Button) findViewById(R.id.beginlesson);
+        lessonButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 /*passes the list of selected sections to the QuizActivity class*/
@@ -53,7 +53,7 @@ public class LessonMenu extends AppCompatActivity {
      * @param v - a view that encapsulates checkboxes
      */
     public void selectSection(View v){
-        boolean checked = ((CheckBox) v).isChecked();
+       /* boolean checked = ((CheckBox) v).isChecked();
         switch(v.getId())
         {
             case R.id.linearequations:
@@ -99,6 +99,6 @@ public class LessonMenu extends AppCompatActivity {
                     break;}
                 break;
 
-        }
+        }*/
     }
 }

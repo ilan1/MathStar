@@ -14,4 +14,7 @@
     <string name="title_activity_quiz">QuizActivity</string>
     <string name="title_activity_balloon_game">BalloonGame</string>
     <string name="title_activity_lesson_menu">LessonMenu</string>
+    <string name="title_activity_story">Story</string>
+    <string name="title_activity_story_game">StoryGame</string>
+    <string name="title_activity_timer_game">TimerGame</string>
 </resources>

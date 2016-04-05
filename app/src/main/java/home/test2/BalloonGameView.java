@@ -10,8 +10,8 @@ import android.view.SurfaceHolder;
  */
 
 public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callback {
-    public static final int WIDTH = 1131;
-    public static final int HEIGHT = 707;
+    public static final int WIDTH = 672;
+    public static final int HEIGHT = 1600;
     private BalloonGameThread thread;
     private BalloonBackground background;
 
@@ -46,7 +46,7 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
     @Override
     public void surfaceCreated(SurfaceHolder holder){
         //start game loop
-        background = new BalloonBackground(BitmapFactory.decodeResource(getResources(), R.drawable.mm2));
+        background = new BalloonBackground(BitmapFactory.decodeResource(getResources(), R.drawable.sky));
         background.setVector(-5);
         thread.setRunning(true);
         thread.start();
