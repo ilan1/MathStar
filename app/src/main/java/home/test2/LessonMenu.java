@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.Toast;
 import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ import android.widget.CheckBox;
 
 public class LessonMenu extends AppCompatActivity {
     ArrayList<String> sections = new ArrayList<String>();
-
+    public static String currentLesson;
     //A class-name tag for any Log calls
     private String tag = getClass().getSimpleName();
 
@@ -35,13 +36,23 @@ public class LessonMenu extends AppCompatActivity {
                 Bundle passSections = new Bundle();
 
                 /*we'll want an if statement somewhere here to go to the correct game*/
-                Intent i = new Intent(LessonMenu.this, BalloonGame.class);
+                Intent i = new Intent();
 
                 i.putStringArrayListExtra("sectionArray", sections);
-                if(sections.size() == 0){
-                    Toast.makeText(getApplicationContext(), "You must select at least 1 chapter.", Toast.LENGTH_LONG).show();
+                if(sections.contains("Linear Equations") || sections.contains("Classification of Angles")){
+                    if(sections.contains("Classification of Angles")){
+                        currentLesson = "Classification of Angles";
+                    }else currentLesson = "Linear Equations";
+                    i = new Intent(LessonMenu.this, BalloonGame.class);
+                    startActivity(i);
+                  //  Toast.makeText(getApplicationContext(), "You must select at least 1 chapter.", Toast.LENGTH_LONG).show();
+                }
+                else if(sections.contains("Linear Equations") || sections.contains("Right Triangles and Trigonometry")){
+                    i = new Intent(LessonMenu.this, TimerGame.class);
+                    startActivity(i);
                 }
                 else{
+                    i = new Intent(LessonMenu.this, StoryGame.class);
                     startActivity(i);
                 }
             }
@@ -53,11 +64,12 @@ public class LessonMenu extends AppCompatActivity {
      * @param v - a view that encapsulates checkboxes
      */
     public void selectSection(View v){
-       /* boolean checked = ((CheckBox) v).isChecked();
+        boolean checked = ((RadioButton) v).isChecked();
         switch(v.getId())
         {
             case R.id.linearequations:
                 if(checked){
+                    sections.clear();
                     sections.add("Linear Equations");}
                 else{
                     sections.remove("Linear Equations");
@@ -65,6 +77,7 @@ public class LessonMenu extends AppCompatActivity {
                 break;
             case R.id.algebraicfunctions:
                 if(checked){
+                    sections.clear();
                     sections.add("Algebraic Functions");}
                 else{
                     sections.remove("Algebraic Functions");
@@ -72,6 +85,7 @@ public class LessonMenu extends AppCompatActivity {
                 break;
             case R.id.sequencesandseries:
                 if(checked){
+                    sections.clear();
                     sections.add("Sequences and Series");}
                 else{
                     sections.remove("Sequences and Series");
@@ -79,6 +93,7 @@ public class LessonMenu extends AppCompatActivity {
                 break;
             case R.id.classofangles:
                 if(checked){
+                    sections.clear();
                     sections.add("Classification of Angles");}
                 else{
                     sections.remove("Classification of Angles");
@@ -86,6 +101,7 @@ public class LessonMenu extends AppCompatActivity {
                 break;
             case R.id.measurements:
                 if(checked){
+                    sections.clear();
                     sections.add("Measurements of Perimeters, Area, and Volume");}
                 else{
                     sections.remove("Measurements of Perimeters, Area, and Volume");
@@ -93,12 +109,13 @@ public class LessonMenu extends AppCompatActivity {
                 break;
             case R.id.trianglestrig:
                 if(checked){
+                    sections.clear();
                     sections.add("Right Triangles and Trigonometry");}
                 else{
                     sections.remove("Right Triangles and Trigonometry");
                     break;}
                 break;
 
-        }*/
+        }
     }
 }
