@@ -4,6 +4,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
@@ -27,11 +28,13 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
     private long balloonStartTime;
     private Balloon balloon; //test
     private Random rand = new Random();
+    private int currentQuestion = 0;
 
 
     List<Question> data = Data.getInstance().getData();
     int[] lessonQuestions = new int[10];
     String section = LessonMenu.currentLesson;
+    private boolean dontdrawplz;
 
     public BalloonGameView(Context context){
         super(context);
@@ -67,7 +70,16 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
         thread.start();
     }
 
-    public boolean onTouchEven(MotionEvent event){
+    @Override
+    public boolean onTouchEvent(MotionEvent event){
+
+        this.dontdrawplz = true;
+        currentQuestion++;
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_MOVE:
+                currentQuestion++;
+
+        }
         return super.onTouchEvent(event);
     }
 
@@ -78,20 +90,20 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
     @Override
     public void draw(Canvas canvas){
 
-        final float scaleX = getWidth()/WIDTH;
-        final float scaleY = getHeight()/HEIGHT;
-        if(canvas!=null){
+        final float scaleX = getWidth() / WIDTH;
+        final float scaleY = getHeight() / HEIGHT;
+        if (canvas != null) {
             final int original = canvas.save();
             canvas.scale(scaleX, scaleY);
             super.draw(canvas);
             background.draw(canvas);
             canvas.restoreToCount(original);
         }
+
         drawText(canvas);
     }
     public void drawText(Canvas canvas)
     {
-
         Paint textPaint = new Paint();
         int xPos = (canvas.getWidth() / 2);
         int yPos = (int) ((canvas.getHeight() / 2) - ((textPaint.descent() + textPaint.ascent()) / 2)) ;
@@ -99,13 +111,11 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
         textPaint.setColor(Color.BLACK);
         textPaint.setTextSize(100);
         textPaint.setTypeface(Typeface.create(Typeface.SERIF, Typeface.BOLD));
-        canvas.drawText(showQuestion(), xPos, yPos , textPaint);
+        canvas.drawText(showQuestion(), xPos, yPos, textPaint);
     }
 
     public String showQuestion(){
-        return data.get(lessonQuestions[0]).getProblem().toString();
-    }
-    public void nextQuestion(){
+        return data.get(lessonQuestions[currentQuestion]).getProblem().toString();
     }
 
     /*add questions similarly to QuizActivity*/
