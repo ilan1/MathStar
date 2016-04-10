@@ -23,6 +23,11 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
     public static final int HEIGHT = 1600; //1600
     private BalloonGameThread thread;
     private BalloonBackground background;
+    private ArrayList<Balloon> balloons;
+    private long balloonStartTime;
+    private Balloon balloon; //test
+    private Random rand = new Random();
+
 
     List<Question> data = Data.getInstance().getData();
     int[] lessonQuestions = new int[10];

@@ -1,5 +1,6 @@
 package home.test2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -199,20 +201,36 @@ public class QuizActivity extends AppCompatActivity {
      */
     public void initialize(){
         submitButton = (Button) findViewById(R.id.submitButton);
+        Log.v(tag + " submit button text", "" + submitButton.getText());
         questionView = (TextView) findViewById(R.id.questionView);
         showQuestion();
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(submitButton.getText() == "Done"){
+                if (submitButton.getText().toString().equalsIgnoreCase("CHECK")) {
+                    checkAnswer();
+                    submitButton.setText("SUBMIT");
+                    if (check())
+                        Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT).show();
+                    else if (!check())
+                        Toast.makeText(getApplicationContext(), "Sorry, incorrect!", Toast.LENGTH_SHORT).show();
+                    EditText answerText = (EditText) findViewById(R.id.answerText);
+                    answerText.setEnabled(false);
+                    return;
+                } else if (submitButton.getText().toString().equalsIgnoreCase("SUBMIT")) {
+                    showNextQuestion();
+                    EditText answerText = (EditText) findViewById(R.id.answerText);
+                    answerText.setEnabled(true);
+                    if(currentQuestion != 10) {
+                        submitButton.setText("CHECK");
+                    }
+                } else if (submitButton.getText().toString().equalsIgnoreCase("FINISH")) {
                     //navigate to quiz selection page
                     Intent i = new Intent(QuizActivity.this, QuizMenu.class);
                     startActivity(i);
                     return;
                 }
                 // check(); add check() method to keep track of answers
-                check();
-                showNextQuestion();
                 //showNextQuestion ?
             }
         });
@@ -239,18 +257,27 @@ public class QuizActivity extends AppCompatActivity {
             boolean mpavMax = true;
             boolean endMax = true;
             questionView.setText("Congrats you got " + correct + " questions correct.");
-            submitButton.setText("Done");
+            submitButton.setText("Finish");
             d.setVisibility(View.GONE);
         }
         else
         {showQuestion();}
     }
-    public void check(){
+    public boolean check(){
         EditText d = (EditText)findViewById(R.id.answerText);
         if (d.getText().toString().equalsIgnoreCase(data.get(quiznums[currentQuestion]).getAnswer()))
-        {correct++;}
+        {
+            return true;
+        }
+        else return false;
     }
-
+    public void checkAnswer(){
+        EditText d = (EditText)findViewById(R.id.answerText);
+        if (d.getText().toString().equalsIgnoreCase(data.get(quiznums[currentQuestion]).getAnswer()))
+        {
+            correct++;
+        }
+    }
     /**
      * Displays questions
      */
@@ -258,8 +285,5 @@ public class QuizActivity extends AppCompatActivity {
 
         questionView.setText(data.get(quiznums[currentQuestion]).getProblem());
     }
-
-
-
 
 }
