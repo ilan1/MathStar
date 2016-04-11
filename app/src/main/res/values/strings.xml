@@ -17,4 +17,5 @@
     <string name="title_activity_story">Story</string>
     <string name="title_activity_story_game">StoryGame</string>
     <string name="title_activity_timer_game">TimerGame</string>
+    <string name="title_activity_results">ResultsActivity</string>
 </resources>

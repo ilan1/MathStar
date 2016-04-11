@@ -18,6 +18,7 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -40,6 +41,8 @@ public class QuizActivity extends AppCompatActivity {
     int correct = 0;
     private int currentQuestion = 0;
     List<Question> data = Data.getInstance().getData();
+    ArrayList<Question> questions = new ArrayList<>();
+    ArrayList<String> responses = new ArrayList<>();
     int[] quiznums = new int[10];
 
     //A class-name tag for any Log calls
@@ -221,13 +224,16 @@ public class QuizActivity extends AppCompatActivity {
                     showNextQuestion();
                     EditText answerText = (EditText) findViewById(R.id.answerText);
                     answerText.setEnabled(true);
-                    if(currentQuestion != 10) {
+                    if (currentQuestion != 10) {
                         submitButton.setText("CHECK");
                     }
                 } else if (submitButton.getText().toString().equalsIgnoreCase("FINISH")) {
+                    //open results
+                    displayResults();
+
                     //navigate to quiz selection page
-                    Intent i = new Intent(QuizActivity.this, QuizMenu.class);
-                    startActivity(i);
+                    //Intent i = new Intent(QuizActivity.this, QuizMenu.class);
+                    //startActivity(i);
                     return;
                 }
                 // check(); add check() method to keep track of answers
@@ -241,11 +247,15 @@ public class QuizActivity extends AppCompatActivity {
      */
     public void showNextQuestion(){
         EditText d = (EditText)findViewById(R.id.answerText);
+        responses.add(currentQuestion, d.getText().toString());
+        questions.add(currentQuestion, data.get(quiznums[currentQuestion]));
         d.setText("");
         currentQuestion++;
 
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        TextView progressBarText = (TextView) findViewById(R.id.progressBarText);
         progressBar.setProgress(currentQuestion * 10);
+        progressBarText.setText(currentQuestion + " / 10");
 
         Log.v(tag + " currentQuestion", "" + currentQuestion);
         if(currentQuestion == 10){
@@ -284,6 +294,13 @@ public class QuizActivity extends AppCompatActivity {
     public void showQuestion(){
 
         questionView.setText(data.get(quiznums[currentQuestion]).getProblem());
+    }
+
+    public void displayResults(){
+        Intent i = new Intent(this, ResultsActivity.class);
+        i.putExtra("questions", questions);
+        i.putStringArrayListExtra("responses", responses);
+        startActivity(i);
     }
 
 }
