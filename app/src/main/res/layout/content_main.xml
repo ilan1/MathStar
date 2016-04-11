@@ -9,42 +9,42 @@
     android:background="#ffffff"
     tools:showIn="@layout/activity_main">
 
-    <ImageButton
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/LessonsButton"
-        android:src="@drawable/lessons"
-        android:background="@null"
-        android:cropToPadding="false"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/mainScreenCenter"
-        android:layout_alignEnd="@+id/mainScreenCenter"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignWithParentIfMissing="false"
-        android:onClick="onClick" />
+        android:id="@+id/imageView"
+        android:src="@drawable/eightbitmainscreenbg"
+        android:layout_alignParentStart="true" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/QuizButton"
-        android:src="@drawable/quiz"
-        android:background="@null"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/mainScreenCenter"
-        android:layout_alignEnd="@+id/mainScreenCenter"
-        android:onClick="onClick"
-        android:nestedScrollingEnabled="false" />
-
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/mainScreenCenter"
-        android:src="@drawable/mainscreencenter"
-        android:layout_alignWithParentIfMissing="false"
+        android:src="@drawable/eightbitmainscreenquiz"
+        android:background="#00ffffff"
+        android:scaleType="centerInside"
         android:adjustViewBounds="true"
-        android:layout_centerVertical="true"
+        android:onClick="onClick"
+        android:layout_alignParentTop="false"
         android:layout_centerHorizontal="true"
-        android:clickable="true" />
+        android:layout_marginTop="98dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LessonsButton"
+        android:src="@drawable/eightbitmainscreenlessons"
+        android:background="#00ffffff"
+        android:onClick="onClick"
+        android:layout_alignWithParentIfMissing="false"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="175dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp" />
 
 </RelativeLayout>

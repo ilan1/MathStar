@@ -65,7 +65,7 @@ public class QuizActivity extends AppCompatActivity {
             int i = 0;
             boolean safe = true;
         while(i<=9) {
-            hold = r.nextInt(64);
+            hold = r.nextInt(65);
             safe = true;
 
             for (int j = 0; j <= 9; j++) {
