@@ -72,6 +72,7 @@ public class StoryGame extends AppCompatActivity {
         hpText = (TextView) findViewById(R.id.HPtext);
         hpText.setTypeface(custom_font);
 
+
          group = (RadioGroup) findViewById(R.id.radioGroup1);
         button1 = (RadioButton) findViewById(R.id.button1);
          button2 = (RadioButton) findViewById(R.id.button2);
