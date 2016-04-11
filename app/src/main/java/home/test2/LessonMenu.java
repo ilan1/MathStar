@@ -52,7 +52,18 @@ public class LessonMenu extends AppCompatActivity {
                     startActivity(i);
                 }
                 else{
+
+                    if(sections.contains("Sequences and Series")){
+                        currentLesson = "Sequences and Series";
+
+                    }else
+                    {
+                        currentLesson = "Measurements of Perimeters, Area, and Volume";
+
+                    }
                     i = new Intent(LessonMenu.this, StoryGame.class);
+                    i.putStringArrayListExtra("sectionArray", sections);
+
                     startActivity(i);
                 }
             }

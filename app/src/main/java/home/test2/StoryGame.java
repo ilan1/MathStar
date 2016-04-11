@@ -31,6 +31,7 @@ public class StoryGame extends AppCompatActivity {
     ArrayList<String> sections;
     List<Question> data = Data.getInstance().getData();
     int[] storynums = new int[10];
+
     private Button submitButton;
     TextView questionView;
     int safe;
@@ -39,13 +40,15 @@ public class StoryGame extends AppCompatActivity {
     int HP = 50;
     int right;
     int j = 0;
+    Intent quizIntent;
+
 
     int currentQuestion;
-    RadioGroup group = (RadioGroup) findViewById(R.id.radioGroup1);
-    RadioButton button1 = (RadioButton) findViewById(R.id.button1);
-    RadioButton button2 = (RadioButton) findViewById(R.id.button2);
-    RadioButton button3 = (RadioButton) findViewById(R.id.button3);
-    RadioButton button4 = (RadioButton) findViewById(R.id.button4);
+    RadioGroup group;
+    RadioButton button1;
+    RadioButton button2;
+    RadioButton button3;
+    RadioButton button4;
     Random r = new Random();
 
 
@@ -58,7 +61,13 @@ public class StoryGame extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
+        questionView = (TextView) findViewById(R.id.questionView);
 
+         group = (RadioGroup) findViewById(R.id.radioGroup1);
+        button1 = (RadioButton) findViewById(R.id.button1);
+         button2 = (RadioButton) findViewById(R.id.button2);
+         button3 = (RadioButton) findViewById(R.id.button3);
+         button4 = (RadioButton) findViewById(R.id.button4);
        /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,9 +78,9 @@ public class StoryGame extends AppCompatActivity {
         });
 */
 
-        Intent quizIntent = getIntent();
+         quizIntent = getIntent();
+        //sections = quizIntent.getStringArrayListExtra("sectionArray");
         sections = quizIntent.getStringArrayListExtra("sectionArray");
-
 
         if (sections.contains("Sequences and Series")) {
             for (int i = 0; i <= 9; i++) {
@@ -92,6 +101,7 @@ public class StoryGame extends AppCompatActivity {
              //    "a question to pass: "+ data.get(storynums[1]).getProblem());
             public void generate(int j) {
                 submitButton = (Button) findViewById(R.id.submitButton);
+                group.clearCheck();
                     if(HP == 0)
                     {
                         questionView.setText("Sorry you have died.");
@@ -107,7 +117,7 @@ public class StoryGame extends AppCompatActivity {
 
 
 
-                        questionView.setText("Your HP is: " + HP + "" +
+                        questionView.setText("Your HP is: " + HP + " " +
                                 "Question: " + data.get(storynums[j]).getProblem());
 
                 //a.setText(""+(data.get(storynums[1]).getAnswer()) * 2));
@@ -168,6 +178,7 @@ public class StoryGame extends AppCompatActivity {
             }
 
     public void showNextQuestion(int j){
+
 
         generate(j);
     }
