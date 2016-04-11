@@ -95,5 +95,14 @@
         android:layout_alignStart="@+id/trianglestrig"
         android:onClick="beginQuiz"/>
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/backButton"
+        android:layout_alignTop="@+id/beginquiz"
+        android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>

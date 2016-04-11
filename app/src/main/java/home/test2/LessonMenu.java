@@ -27,6 +27,15 @@ public class LessonMenu extends AppCompatActivity {
         setContentView(R.layout.activity_lesson_menu);
        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
        // setSupportActionBar(toolbar);
+        Button backButton = (Button) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+               Intent i = new Intent(LessonMenu.this, MainActivity.class);
+                startActivity(i);
+                }
+
+        });
+
 
        Button lessonButton = (Button) findViewById(R.id.beginlesson);
         lessonButton.setOnClickListener(new View.OnClickListener() {

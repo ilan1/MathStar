@@ -28,6 +28,13 @@ public class QuizMenu extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Button backButton = (Button) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(QuizMenu.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
         Button quizButton = (Button) findViewById(R.id.beginquiz);
         quizButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
