@@ -1,6 +1,8 @@
 package home.test2;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import java.util.List;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -31,9 +34,11 @@ public class StoryGame extends AppCompatActivity {
     ArrayList<String> sections;
     List<Question> data = Data.getInstance().getData();
     int[] storynums = new int[10];
-
+    Typeface custom_font;
     private Button submitButton;
+    ProgressBar healthbar;
     TextView questionView;
+    TextView hpText;
     int safe;
     int wrongjump;
     int correctjump;
@@ -62,12 +67,21 @@ public class StoryGame extends AppCompatActivity {
         //setSupportActionBar(toolbar);
 
         questionView = (TextView) findViewById(R.id.questionView);
+         custom_font = Typeface.createFromAsset(getAssets(), "fonts/MODES___.ttf");
+        questionView.setTypeface(custom_font);
+        hpText = (TextView) findViewById(R.id.HPtext);
+        hpText.setTypeface(custom_font);
 
          group = (RadioGroup) findViewById(R.id.radioGroup1);
         button1 = (RadioButton) findViewById(R.id.button1);
          button2 = (RadioButton) findViewById(R.id.button2);
          button3 = (RadioButton) findViewById(R.id.button3);
          button4 = (RadioButton) findViewById(R.id.button4);
+        button1.setTypeface(custom_font);
+        button2.setTypeface(custom_font);
+        button3.setTypeface(custom_font);
+        button4.setTypeface(custom_font);
+
        /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,9 +115,15 @@ public class StoryGame extends AppCompatActivity {
              //    "a question to pass: "+ data.get(storynums[1]).getProblem());
             public void generate(int j) {
                 submitButton = (Button) findViewById(R.id.submitButton);
+                healthbar = (ProgressBar) findViewById(R.id.healthBar);
+                healthbar.setProgress(HP*2);
+                hpText.setText("HP Remaining: " + HP);
+
+
                 group.clearCheck();
                     if(HP == 0)
                     {
+
                         questionView.setText("Sorry you have died.");
                         submitButton.setText("FINISH");
                     }
@@ -117,8 +137,7 @@ public class StoryGame extends AppCompatActivity {
 
 
 
-                        questionView.setText("Your HP is: " + HP + " " +
-                                "Question: " + data.get(storynums[j]).getProblem());
+                        questionView.setText("Question: " + data.get(storynums[j]).getProblem());
 
                 //a.setText(""+(data.get(storynums[1]).getAnswer()) * 2));
                 /*
@@ -147,7 +166,7 @@ public class StoryGame extends AppCompatActivity {
                         mid = r.nextInt(34);
                         button4.setText(data.get(mid).getAnswer());
 
-                        right = r.nextInt(3);
+                        right = r.nextInt(4);
                         if(right == 3)
                         {button4.setText(data.get(storynums[j]).getAnswer());}
                         else if(right == 2)

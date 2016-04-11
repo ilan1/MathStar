@@ -62,7 +62,7 @@ public class QuizActivity extends AppCompatActivity {
             int i = 0;
             boolean safe = true;
         while(i<=9) {
-            hold = r.nextInt(64);
+            hold = r.nextInt(65);
             safe = true;
 
             for (int j = 0; j <= 9; j++) {
@@ -221,7 +221,7 @@ public class QuizActivity extends AppCompatActivity {
                     showNextQuestion();
                     EditText answerText = (EditText) findViewById(R.id.answerText);
                     answerText.setEnabled(true);
-                    if(currentQuestion != 10) {
+                    if (currentQuestion != 10) {
                         submitButton.setText("CHECK");
                     }
                 } else if (submitButton.getText().toString().equalsIgnoreCase("FINISH")) {
