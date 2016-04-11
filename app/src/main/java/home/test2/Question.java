@@ -1,9 +1,11 @@
 package home.test2;
 
+import java.io.Serializable;
+
 /**
  * Created by christal on 3/17/2016.
  */
-public class Question {
+public class Question implements Serializable{
     private String subject;
     private String section;
     private String problem;
