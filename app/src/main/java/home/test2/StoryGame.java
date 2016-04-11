@@ -41,8 +41,11 @@ public class StoryGame extends AppCompatActivity {
     int j = 0;
 
     int currentQuestion;
-     RadioGroup group = (RadioGroup) findViewById(R.id.radioGroup1);
-    RadioButton button;
+    RadioGroup group = (RadioGroup) findViewById(R.id.radioGroup1);
+    RadioButton button1 = (RadioButton) findViewById(R.id.button1);
+    RadioButton button2 = (RadioButton) findViewById(R.id.button2);
+    RadioButton button3 = (RadioButton) findViewById(R.id.button3);
+    RadioButton button4 = (RadioButton) findViewById(R.id.button4);
     Random r = new Random();
 
 
@@ -94,6 +97,12 @@ public class StoryGame extends AppCompatActivity {
                         questionView.setText("Sorry you have died.");
                         submitButton.setText("FINISH");
                     }
+                    else if (j == 10)
+                    {
+                        questionView.setText("You win");
+                        submitButton.setText("FINISH");
+                    }
+
                 else{
 
 
@@ -102,7 +111,8 @@ public class StoryGame extends AppCompatActivity {
                                 "Question: " + data.get(storynums[j]).getProblem());
 
                 //a.setText(""+(data.get(storynums[1]).getAnswer()) * 2));
-                for (int i = 0; i < 4; i++) {
+                /*
+                        for (int i = 0; i < 4; i++) {
 
                     int mid = r.nextInt(34);
                     button = new RadioButton(this);
@@ -116,7 +126,26 @@ public class StoryGame extends AppCompatActivity {
 
                 group.removeViewAt(right);
                 group.addView(button, right);
+                 */
 
+                        int mid = r.nextInt(34);
+                        button1.setText(data.get(mid).getAnswer());
+                        mid = r.nextInt(34);
+                        button2.setText(data.get(mid).getAnswer());
+                        mid = r.nextInt(34);
+                        button3.setText(data.get(mid).getAnswer());
+                        mid = r.nextInt(34);
+                        button4.setText(data.get(mid).getAnswer());
+
+                        right = r.nextInt(3);
+                        if(right == 3)
+                        {button4.setText(data.get(storynums[j]).getAnswer());}
+                        else if(right == 2)
+                        {button3.setText(data.get(storynums[j]).getAnswer());}
+                        else if(right == 1)
+                        {button2.setText(data.get(storynums[j]).getAnswer());}
+                        else
+                        {button1.setText(data.get(storynums[j]).getAnswer());}
 
                 submitButton.setOnClickListener(new View.OnClickListener()
                 {
@@ -144,11 +173,27 @@ public class StoryGame extends AppCompatActivity {
     }
     public void check(){
 
-        if (group.getCheckedRadioButtonId() == right)
+        if (button4.isChecked() &&  right == 3)
         {
             j++;
             showNextQuestion(j);
         }
+        else if (button3.isChecked() &&  right == 2)
+        {
+            j++;
+            showNextQuestion(j);
+        }
+        else if (button2.isChecked() &&  right == 1)
+        {
+            j++;
+            showNextQuestion(j);
+        }
+        else if (button1.isChecked() &&  right == 0)
+        {
+            j++;
+            showNextQuestion(j);
+        }
+
         else{
             HP = HP - 10;
             j++;
