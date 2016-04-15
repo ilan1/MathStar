@@ -17,9 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/questionView"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:text="Question"
-        android:textColor="#00FF00" />
+        android:textColor="#00FF00"
+        android:textIsSelectable="false" />
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
@@ -32,7 +33,7 @@
 
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_width="76dp"
             android:layout_height="wrap_content"
             android:text=""
             android:id="@+id/button1"
@@ -43,7 +44,7 @@
 
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
             android:id="@+id/button2"
@@ -54,7 +55,7 @@
             android:background="#00FF00" />
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
             android:id="@+id/button3"
@@ -65,7 +66,7 @@
             android:background="#00FF00" />
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
             android:id="@+id/button4"
@@ -79,12 +80,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check"
+        android:text="Next"
         android:id="@+id/submitButton"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:textColor="#000000"
-        android:background="#00FF00" />
+        android:background="#00FF00"
+        android:layout_above="@+id/HPtext"
+        android:layout_alignEnd="@+id/HPtext"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="78dp" />
 
 
 
@@ -93,11 +96,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/HPtext"
         android:textSize="15sp"
-        android:layout_above="@+id/healthBar"
-        android:layout_alignStart="@+id/healthBar"
 
         android:text=""
-        android:textColor="#00FF00" />
+        android:textColor="#00FF00"
+        android:layout_above="@+id/healthBar"
+        android:layout_alignParentStart="true" />
 
     <ProgressBar
         android:layout_width="wrap_content"
@@ -111,6 +114,15 @@
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:progressDrawable="@drawable/progressbar2"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quit"
+        android:id="@+id/quitButton"
+        android:textColor="#000000"
+        android:background="#00FF00"
+        android:layout_alignTop="@+id/submitButton"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

@@ -19,6 +19,8 @@ import java.util.Random;
 public class StoryGame extends AppCompatActivity {
 
     ArrayList<String> sections;
+    String[] deathArray = new String[5];
+    String[] scenarios = new String[10];
     List<Question> data = Data.getInstance().getData();
     int[] storynums = new int[10];
     Typeface custom_font;
@@ -27,21 +29,23 @@ public class StoryGame extends AppCompatActivity {
     TextView questionView;
     TextView hpText;
     int safe;
-    int wrongjump;
-    int correctjump;
+    private Button quitButton;
     int HP = 50;
     int right;
     int j = 0;
+    boolean noDuplicates;
     Intent quizIntent;
 
 
-    int currentQuestion;
+    String currentAnswer;
     RadioGroup group;
     RadioButton button1;
     RadioButton button2;
     RadioButton button3;
     RadioButton button4;
     Random r = new Random();
+
+    int but1,but2,but3,but4;
 
 
 
@@ -59,8 +63,28 @@ public class StoryGame extends AppCompatActivity {
         hpText = (TextView) findViewById(R.id.HPtext);
         hpText.setTypeface(custom_font);
 
+        deathArray[0] = "Wow you're terrible!";
+        deathArray[1] = "Better go study some more...";
+        deathArray[2] = "Tip: Don't die next time...";
+        deathArray[3] = "Time to get a tutor?";
+        deathArray[4] = "You completely and utterly failed.";
 
-         group = (RadioGroup) findViewById(R.id.radioGroup1);
+        scenarios[0] = "You begin your journey by crossing the stream in front of your house, to keep your focus you ask yourself a math problem ";
+        scenarios[1] = "You continue walking and run into a troll who asks you ";
+        scenarios[2] = "You reach your first town but before you can enter you must answer a riddle ";
+        scenarios[3] = "You begin to get hungry and look around for food. You enter a math contest where 1st place gets pie and last place gets poison ";
+        scenarios[4] = "You set off for the next town but must answer the trolls question to cross the bridge ";
+        scenarios[5] = "A thunderstorm is overhead, a shopkeep offers you refuge if you can answer his sons homework problem ";
+        scenarios[6] = "To reward yourself for making it so far you decide to take a break, to decide " +
+                "whether you sleep in the snake pit or under a tree you ask yourself a question ";
+        scenarios[7] = "You reach the castle, but it has a code on the drawbridge.  The keypad asks you ";
+        scenarios[8] = "  You've made it inside the castle and encounter two dragons, to let you pass they each ask you a question.  The first one asks ";
+        scenarios[9] = "For a final test the second dragon asks you ";
+
+
+
+
+        group = (RadioGroup) findViewById(R.id.radioGroup1);
         button1 = (RadioButton) findViewById(R.id.button1);
          button2 = (RadioButton) findViewById(R.id.button2);
          button3 = (RadioButton) findViewById(R.id.button3);
@@ -103,6 +127,7 @@ public class StoryGame extends AppCompatActivity {
              //    "a question to pass: "+ data.get(storynums[1]).getProblem());
             public void generate(int j) {
                 submitButton = (Button) findViewById(R.id.submitButton);
+                quitButton = (Button) findViewById(R.id.quitButton);
                 healthbar = (ProgressBar) findViewById(R.id.healthBar);
                 healthbar.setProgress(HP*2);
                 hpText.setText("HP Remaining: " + HP);
@@ -111,8 +136,8 @@ public class StoryGame extends AppCompatActivity {
                 group.clearCheck();
                     if(HP == 0)
                     {
-
-                        questionView.setText("Sorry you have died.");
+                        safe = r.nextInt(5);
+                        questionView.setText("" + deathArray[safe]);
                         submitButton.setText("FINISH");
                     }
                     else if (j == 10)
@@ -125,7 +150,7 @@ public class StoryGame extends AppCompatActivity {
 
 
 
-                        questionView.setText("Question: " + data.get(storynums[j]).getProblem());
+                        questionView.setText(""+scenarios[j] + data.get(storynums[j]).getProblem());
 
                 //a.setText(""+(data.get(storynums[1]).getAnswer()) * 2));
                 /*
@@ -144,6 +169,7 @@ public class StoryGame extends AppCompatActivity {
                 group.removeViewAt(right);
                 group.addView(button, right);
                  */
+                        /*
 
                         int mid = r.nextInt(34);
                         button1.setText(data.get(mid).getAnswer());
@@ -153,16 +179,51 @@ public class StoryGame extends AppCompatActivity {
                         button3.setText(data.get(mid).getAnswer());
                         mid = r.nextInt(34);
                         button4.setText(data.get(mid).getAnswer());
+*/
+                        currentAnswer = data.get(storynums[j]).getAnswer();
+
+                        noDuplicates = false;
+
+
+
+
+
+                        int mid = r.nextInt(18);
+                        button1.setText(""+mid);
+                        mid = r.nextInt(18);
+                        button2.setText(""+mid);
+                        mid = r.nextInt(18);
+                        button3.setText(""+mid);
+                        mid = r.nextInt(18);
+                        button4.setText(""+mid);
+
+
+
+
 
                         right = r.nextInt(4);
                         if(right == 3)
-                        {button4.setText(data.get(storynums[j]).getAnswer());}
+                        {button4.setText(""+currentAnswer);}
                         else if(right == 2)
-                        {button3.setText(data.get(storynums[j]).getAnswer());}
+                        {button3.setText(""+currentAnswer);}
                         else if(right == 1)
-                        {button2.setText(data.get(storynums[j]).getAnswer());}
+                        {button2.setText(""+currentAnswer);}
                         else
-                        {button1.setText(data.get(storynums[j]).getAnswer());}
+                        {button1.setText(""+currentAnswer);}
+
+                        quitButton.setOnClickListener(new View.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(View v)
+                            {
+
+                                    //navigate to Lesson selection page
+                                    Intent i = new Intent(StoryGame.this, LessonMenu.class);
+                                    startActivity(i);
+                                    return;
+
+                            }
+                        });
 
                 submitButton.setOnClickListener(new View.OnClickListener()
                 {
@@ -170,7 +231,7 @@ public class StoryGame extends AppCompatActivity {
                     public void onClick(View v)
                     {
                         if (submitButton.getText().toString().equalsIgnoreCase("FINISH")) {
-                            //navigate to quiz selection page
+                            //navigate to Lesson selection page
                             Intent i = new Intent(StoryGame.this, LessonMenu.class);
                             startActivity(i);
                             return;
@@ -181,6 +242,7 @@ public class StoryGame extends AppCompatActivity {
                         }
                     }
                     })
+
                     ;}
             }
 

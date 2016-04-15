@@ -91,9 +91,10 @@
         android:layout_height="wrap_content"
         android:text="@string/beginquiz"
         android:id="@+id/beginquiz"
+        android:onClick="beginQuiz"
+        android:layout_marginTop="95dp"
         android:layout_below="@+id/trianglestrig"
-        android:layout_alignStart="@+id/trianglestrig"
-        android:onClick="beginQuiz"/>
+        android:layout_alignParentEnd="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -102,7 +103,7 @@
         android:text="Back"
         android:id="@+id/backButton"
         android:layout_alignTop="@+id/beginquiz"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

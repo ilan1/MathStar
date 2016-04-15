@@ -25,6 +25,7 @@ import java.util.Random;
 public class QuizActivity extends AppCompatActivity {
 
     private Button submitButton;
+    private Button quitButton;
     //The Num variables keep track of how many times a question from this category has been placed in the quiz list
     //The Max variables switch to false and prevent a question from being selected for the quiz when this category has a uneven majority
     //of questions in the quiz
@@ -204,9 +205,21 @@ public class QuizActivity extends AppCompatActivity {
      */
     public void initialize(){
         submitButton = (Button) findViewById(R.id.submitButton);
+        quitButton = (Button) findViewById(R.id.quitButton);
         Log.v(tag + " submit button text", "" + submitButton.getText());
         questionView = (TextView) findViewById(R.id.questionView);
         showQuestion();
+        quitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //navigate to Lesson selection page
+                Intent i = new Intent(QuizActivity.this, QuizMenu.class);
+                startActivity(i);
+                return;
+
+            }
+        });
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -275,11 +288,7 @@ public class QuizActivity extends AppCompatActivity {
     }
     public boolean check(){
         EditText d = (EditText)findViewById(R.id.answerText);
-        if (d.getText().toString().equalsIgnoreCase(data.get(quiznums[currentQuestion]).getAnswer()))
-        {
-            return true;
-        }
-        else return false;
+        return d.getText().toString().equalsIgnoreCase(data.get(quiznums[currentQuestion]).getAnswer());
     }
     public void checkAnswer(){
         EditText d = (EditText)findViewById(R.id.answerText);
