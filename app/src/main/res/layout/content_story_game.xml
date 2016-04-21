@@ -11,7 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="home.test2.StoryGame"
     tools:showIn="@layout/activity_story_game"
-    android:background="#000000">
+    android:background="@drawable/starrynight">
 
     <TextView
         android:layout_width="match_parent"
@@ -38,8 +38,9 @@
             android:text=""
             android:id="@+id/button1"
 
-            android:textColor="#000000"
-            android:background="#00FF00" />
+            android:textColor="#00FF00"
+            android:background="#000000"
+            android:buttonTint="#ffffff" />
 
 
 
@@ -51,8 +52,9 @@
             android:layout_below="@+id/button1"
             android:layout_alignStart="@+id/button1"
 
-            android:textColor="#000000"
-            android:background="#00FF00" />
+            android:textColor="#00FF00"
+            android:background="#000000"
+            android:buttonTint="#ffffff" />
 
         <RadioButton
             android:layout_width="match_parent"
@@ -62,8 +64,9 @@
             android:layout_below="@+id/button2"
             android:layout_alignStart="@+id/button2"
 
-            android:textColor="#000000"
-            android:background="#00FF00" />
+            android:textColor="#00FF00"
+            android:background="#000000"
+            android:buttonTint="#ffffff" />
 
         <RadioButton
             android:layout_width="match_parent"
@@ -73,8 +76,9 @@
             android:layout_below="@+id/button3"
             android:layout_alignStart="@+id/button3"
 
-            android:textColor="#000000"
-            android:background="#00FF00" />
+            android:textColor="#00FF00"
+            android:background="#000000"
+            android:buttonTint="#ffffff" />
     </RadioGroup>
 
     <Button
