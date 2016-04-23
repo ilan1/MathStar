@@ -20,20 +20,23 @@ public class Balloon extends GameObject {
         super.y = y;
         width = w;
         height = h;
-        speed = 50;
+        speed = 10;
+        /*sprite array*/
         Bitmap[] balloon = new Bitmap[numFrames];
         image = res;
 
-        for(int i = 0; i<balloon.length;i++)
+        /*make bitmap image array(if using spritesheet) */
+        for(int i = 0; i < balloon.length;i++)
         {
             balloon[i] = Bitmap.createBitmap(image, 0, i*height, width, height);
         }
 
+        /*array to animation class*/
         animation.setFrames(balloon);
-        animation.setDelay(100-speed);
+        animation.setDelay(1000);
     }
     public void update(){
-        x-=speed;
+        y-=speed;
         animation.update();
     }
     public void draw(Canvas canvas){
@@ -41,8 +44,9 @@ public class Balloon extends GameObject {
             canvas.drawBitmap(animation.getImage(),x,y,null);
         }catch(Exception e){}
     }
+   /* @Override
     public int getWidth()
     {
         return width-10;
-    }
+    }*/
 }

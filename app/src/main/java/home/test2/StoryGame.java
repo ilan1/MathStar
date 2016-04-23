@@ -47,9 +47,6 @@ public class StoryGame extends AppCompatActivity {
 
     int but1,but2,but3,but4;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,16 +90,6 @@ public class StoryGame extends AppCompatActivity {
         button2.setTypeface(custom_font);
         button3.setTypeface(custom_font);
         button4.setTypeface(custom_font);
-
-       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-*/
 
          quizIntent = getIntent();
         //sections = quizIntent.getStringArrayListExtra("sectionArray");
@@ -148,8 +135,6 @@ public class StoryGame extends AppCompatActivity {
 
                 else{
 
-
-
                         questionView.setText(""+scenarios[j] + data.get(storynums[j]).getProblem());
 
                 //a.setText(""+(data.get(storynums[1]).getAnswer()) * 2));
@@ -184,10 +169,6 @@ public class StoryGame extends AppCompatActivity {
 
                         noDuplicates = false;
 
-
-
-
-
                         int mid = r.nextInt(18);
                         button1.setText(""+mid);
                         mid = r.nextInt(18);
@@ -196,10 +177,6 @@ public class StoryGame extends AppCompatActivity {
                         button3.setText(""+mid);
                         mid = r.nextInt(18);
                         button4.setText(""+mid);
-
-
-
-
 
                         right = r.nextInt(4);
                         if(right == 3)
@@ -280,12 +257,7 @@ public class StoryGame extends AppCompatActivity {
             showNextQuestion(j);
         }
     }
-
-
-
-
-
-    }
+}
 
 
 
