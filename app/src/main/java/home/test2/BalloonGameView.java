@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.content.Context;
 import android.view.SurfaceHolder;
-
+import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -72,13 +72,16 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
 
     @Override
     public boolean onTouchEvent(MotionEvent event){
-
         this.dontdrawplz = true;
         currentQuestion++;
         switch (event.getAction()) {
             case MotionEvent.ACTION_MOVE:
                 currentQuestion++;
-
+        }
+        for(Balloon b: balloons){
+           if(event.getX() > b.getX() && event.getX() < b.getX() + 560 && event.getY() > b.getY() && event.getY() < b.getY() + 880) {
+               Log.i("tag", "Clicked on balloon " + b.getX() + ", " + b.getY());
+           }
         }
         return super.onTouchEvent(event);
     }
@@ -89,12 +92,9 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
         long balloonElapsed = (System.nanoTime()-balloonStartTime)/1000000;
         if(balloonElapsed > 2500) {
 
-            if (balloons.size() == 0) {
-                balloons.add(new Balloon(BitmapFactory.decodeResource(getResources(), R.drawable.balloon), WIDTH / 2, HEIGHT, 279, 440, 1));
-            } else {
-                balloons.add(new Balloon(BitmapFactory.decodeResource(getResources(), R.drawable.balloon),
-                        (int) (rand.nextDouble() * (WIDTH)), HEIGHT, 279, 440, 1));
-            }
+                balloons.add(new Balloon(BitmapFactory.decodeResource(getResources(), R.drawable.balloon), "4",
+                        (int) (rand.nextDouble() * (WIDTH)), HEIGHT, 1));
+
             /*reset timer*/
             balloonStartTime = System.nanoTime();
         }
@@ -102,12 +102,6 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
         /*loop through balloons*/
         for(int i = 0; i < balloons.size(); i++){
             balloons.get(i).update();
-            /*check if player clicks balloon goes here*/
-            /*remove balloons that have passed screen*/
-            if(balloons.get(i).getY() < -100){
-                balloons.remove(i);
-                break;
-            }
         }
     }
 
@@ -115,6 +109,7 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
     @Override
     public void draw(Canvas canvas){
 
+        Paint rectPaint = new Paint();
         final float scaleX = getWidth() / WIDTH;
         final float scaleY = getHeight() / HEIGHT;
         if (canvas != null) {
@@ -124,21 +119,24 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
             background.draw(canvas);
             canvas.restoreToCount(original);
         }
-        drawText(canvas);
         for(Balloon b: balloons){
             b.draw(canvas);
         }
+        rectPaint.setARGB(128, 255, 0, 0);
+        canvas.drawRect(getLeft(), getTop()/4, getRight(), getBottom()/4, rectPaint);
+        drawText(canvas);
     }
     public void drawText(Canvas canvas)
     {
         Paint textPaint = new Paint();
         int xPos = (canvas.getWidth() / 2);
-        int yPos = (int) ((canvas.getHeight() / 2) - ((textPaint.descent() + textPaint.ascent()) / 2)) ;
+        int yPos = (int) ((canvas.getHeight() / (8)) - ((textPaint.descent() + textPaint.ascent()) / 2)) ;
         textPaint.setTextAlign(Paint.Align.CENTER);
         textPaint.setColor(Color.BLACK);
         textPaint.setTextSize(100);
         textPaint.setTypeface(Typeface.create(Typeface.SERIF, Typeface.BOLD));
         canvas.drawText(showQuestion(), xPos, yPos, textPaint);
+
     }
 
     public String showQuestion(){
