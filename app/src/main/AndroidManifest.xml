@@ -45,7 +45,16 @@
         <activity
             android:name=".ResultsActivity"
             android:label="@string/title_activity_results"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShowQuestion"
+            android:label="@string/title_activity_show_question"
+            android:parentActivityName=".ResultsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="home.test2.ResultsActivity" />
+        </activity>
     </application>
 
 </manifest>
