@@ -56,7 +56,7 @@ public class LessonMenu extends AppCompatActivity {
                     startActivity(i);
                   //  Toast.makeText(getApplicationContext(), "You must select at least 1 chapter.", Toast.LENGTH_LONG).show();
                 }
-                else if(sections.contains("Linear Equations") || sections.contains("Right Triangles and Trigonometry")){
+                else if(sections.contains("Algebraic Functions") || sections.contains("Right Triangles and Trigonometry")){
                     i = new Intent(LessonMenu.this, TimerGame.class);
                     startActivity(i);
                 }
