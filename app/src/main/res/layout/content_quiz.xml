@@ -64,4 +64,30 @@
         android:id="@+id/quitButton"
         android:layout_alignTop="@+id/submitButton"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/wrongtext"
+        android:layout_marginStart="66dp"
+        android:layout_alignEnd="@+id/answerText"
+        android:layout_below="@+id/answerText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Correct Answer:"
+        android:id="@+id/correcttext"
+        android:layout_below="@+id/wrongtext"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/Answerbox"
+        android:layout_alignTop="@+id/correcttext"
+        android:layout_alignEnd="@+id/answerText" />
 </RelativeLayout>

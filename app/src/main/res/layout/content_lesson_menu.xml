@@ -52,7 +52,7 @@
             android:onClick="selectSection"
             />
 
-    </RadioGroup>
+
 
     <Button
         android:layout_width="wrap_content"
@@ -99,6 +99,7 @@
         android:onClick="selectSection"
         android:layout_above="@+id/measurements"
         android:layout_alignParentStart="true" />
+    </RadioGroup>
 
     <TextView
         android:layout_width="wrap_content"
