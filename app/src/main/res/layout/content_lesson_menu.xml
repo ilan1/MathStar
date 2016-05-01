@@ -9,98 +9,6 @@
     tools:showIn="@layout/activity_lesson_menu">
 
 
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/radioGroup">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:text="Algebra"
-            android:id="@+id/textView"
-            android:layout_gravity="center_horizontal" />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/linearequations"
-            android:id="@+id/linearequations"
-            android:layout_below="@+id/textView"
-            android:layout_alignStart="@+id/textView"
-            android:onClick="selectSection"
-            />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/algebraicfunctions"
-            android:id="@+id/algebraicfunctions"
-            android:layout_below="@+id/linearequations"
-            android:layout_alignStart="@+id/linearequations"
-            android:onClick="selectSection"
-            />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sequencesandseries"
-            android:id="@+id/sequencesandseries"
-            android:layout_below="@+id/algebraicfunctions"
-            android:layout_alignStart="@+id/algebraicfunctions"
-            android:onClick="selectSection"
-            />
-
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Begin Lesson"
-        android:id="@+id/beginlesson"
-        android:onClick="beginLesson"
-        android:layout_alignTop="@+id/backButton"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:id="@+id/backButton"
-        android:layout_marginBottom="103dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/trianglestrig"
-        android:id="@+id/trianglestrig"
-        android:onClick="selectSection"
-        android:layout_below="@+id/measurements"
-        android:layout_alignParentStart="true" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/measurements"
-        android:id="@+id/measurements"
-        android:onClick="selectSection"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/classofangles"
-        android:id="@+id/classofangles"
-        android:onClick="selectSection"
-        android:layout_above="@+id/measurements"
-        android:layout_alignParentStart="true" />
-    </RadioGroup>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -108,6 +16,91 @@
         android:text="@string/geometry"
         android:id="@+id/textView2"
         android:layout_gravity="center_horizontal"
-        android:layout_above="@+id/classofangles"
-        android:layout_toEndOf="@+id/backButton" />
+        android:layout_below="@+id/sequencesandseries"
+        android:layout_alignStart="@+id/sequencesandseries" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:text="Algebra"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/linearequations"
+        android:id="@+id/linearequations"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:onClick="selectSection"
+        />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/algebraicfunctions"
+        android:id="@+id/algebraicfunctions"
+        android:layout_below="@+id/linearequations"
+        android:layout_alignStart="@+id/linearequations"
+        android:onClick="selectSection"
+        />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sequencesandseries"
+        android:id="@+id/sequencesandseries"
+        android:layout_below="@+id/algebraicfunctions"
+        android:layout_alignStart="@+id/algebraicfunctions"
+        android:onClick="selectSection"
+        />
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Begin Lesson"
+    android:id="@+id/beginlesson"
+    android:onClick="beginLesson"
+    android:layout_alignTop="@+id/backButton"
+    android:layout_alignParentEnd="true" />
+
+    <Button
+    style="?android:attr/buttonStyleSmall"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Back"
+    android:id="@+id/backButton"
+        android:layout_below="@+id/measurements"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="94dp" />
+
+    <RadioButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/trianglestrig"
+    android:id="@+id/trianglestrig"
+    android:onClick="selectSection"
+        android:layout_below="@+id/classofangles"
+        android:layout_alignStart="@+id/classofangles" />
+
+    <RadioButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/measurements"
+    android:id="@+id/measurements"
+    android:onClick="selectSection"
+        android:layout_below="@+id/trianglestrig"
+        android:layout_alignStart="@+id/trianglestrig" />
+
+    <RadioButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/classofangles"
+    android:id="@+id/classofangles"
+    android:onClick="selectSection"
+        android:layout_below="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
 </RelativeLayout>
