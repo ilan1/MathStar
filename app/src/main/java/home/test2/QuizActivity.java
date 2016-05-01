@@ -38,6 +38,8 @@ public class QuizActivity extends AppCompatActivity {
     boolean endMax = true;
 
     TextView questionView;
+    TextView answerbox;
+    TextView correctprefix;
     ArrayList<String> sections;
     int correct = 0;
     private int currentQuestion = 0;
@@ -208,6 +210,8 @@ public class QuizActivity extends AppCompatActivity {
         quitButton = (Button) findViewById(R.id.quitButton);
         Log.v(tag + " submit button text", "" + submitButton.getText());
         questionView = (TextView) findViewById(R.id.questionView);
+        correctprefix = (TextView) findViewById(R.id.correcttext);
+        answerbox = (TextView) findViewById(R.id.Answerbox);
         showQuestion();
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -229,7 +233,13 @@ public class QuizActivity extends AppCompatActivity {
                     if (check())
                         Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT).show();
                     else if (!check())
+                    {
                         Toast.makeText(getApplicationContext(), "Sorry, incorrect!", Toast.LENGTH_SHORT).show();
+                        correctprefix.setText("Correct Answer: ");
+                        answerbox.setText(data.get(quiznums[currentQuestion]).getAnswer());
+
+                    }
+
                     EditText answerText = (EditText) findViewById(R.id.answerText);
                     answerText.setEnabled(false);
                     return;
@@ -262,6 +272,8 @@ public class QuizActivity extends AppCompatActivity {
         EditText d = (EditText)findViewById(R.id.answerText);
         responses.add(currentQuestion, d.getText().toString());
         questions.add(currentQuestion, data.get(quiznums[currentQuestion]));
+        correctprefix.setText("");
+        answerbox.setText("");
         d.setText("");
         currentQuestion++;
 

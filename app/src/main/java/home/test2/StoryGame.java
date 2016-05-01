@@ -82,9 +82,9 @@ public class StoryGame extends AppCompatActivity {
 
 
         group = (RadioGroup) findViewById(R.id.radioGroup1);
-        button1 = (RadioButton) findViewById(R.id.button1);
-         button2 = (RadioButton) findViewById(R.id.button2);
-         button3 = (RadioButton) findViewById(R.id.button3);
+        button1 = (RadioButton) findViewById(R.id.answer1);
+         button2 = (RadioButton) findViewById(R.id.answer2);
+         button3 = (RadioButton) findViewById(R.id.answer3);
          button4 = (RadioButton) findViewById(R.id.button4);
         button1.setTypeface(custom_font);
         button2.setTypeface(custom_font);

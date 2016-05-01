@@ -10,6 +10,119 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="home.test2.TimerGame"
-    tools:showIn="@layout/activity_timer_game">
+    tools:showIn="@layout/activity_timer_game"
+    android:clickable="false">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/questionView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:editable="false"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeText"
+        android:layout_marginBottom="63dp"
+        android:text="Time: "
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:editable="false" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timerValueText"
+        android:layout_alignTop="@+id/timeText"
+        android:layout_toEndOf="@+id/timeText"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="false"
+        android:text="30"
+        android:editable="false"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ScoreText"
+        android:text="Score:"
+        android:layout_alignTop="@+id/timerValueText"
+        android:layout_toStartOf="@+id/scoreValueText"
+        android:editable="false"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scoreValueText"
+        android:text="0"
+        android:layout_alignTop="@+id/ScoreText"
+        android:layout_alignParentEnd="true"
+        android:editable="false"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/questionView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="80dp"
+        android:layout_above="@+id/timeText"
+        android:id="@+id/buttonTable">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:id="@+id/answer1"
+                android:layout_column="0"
+                android:layout_weight=".5"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:id="@+id/answer2"
+                android:layout_column="20"
+                android:layout_weight=".5"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:id="@+id/answer3"
+                android:layout_column="0"
+                android:layout_weight=".5" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:id="@+id/answer4"
+                android:layout_column="20"
+                android:layout_weight=".5"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quit"
+        android:id="@+id/quitButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

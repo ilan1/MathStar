@@ -9,18 +9,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="home.test2.ResultsActivity"
-    tools:showIn="@layout/activity_results">
+    tools:context="home.test2.ShowQuestion"
+    tools:showIn="@layout/activity_show_question">
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TableLayout
-            android:id="@+id/resultsTableLayout"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"/>
-    </ScrollView>
-
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/answerText"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
