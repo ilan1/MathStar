@@ -37,7 +37,7 @@ public class BalloonGameThread extends Thread {
             try {
                 canvas = this.surfaceHolder.lockCanvas();
                 synchronized (surfaceHolder) {
-                    this.balloonGameView.update();
+                    this.balloonGameView.update(canvas);
                     this.balloonGameView.draw(canvas);
                 }
             } catch (Exception e) {

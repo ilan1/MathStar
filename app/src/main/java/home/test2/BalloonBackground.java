@@ -13,16 +13,16 @@ public class BalloonBackground {
     public BalloonBackground(Bitmap res){
         image = res;
     }
-    public void update(){
+    public void update(Canvas canvas){
         y+=dy;
-        if(y < -BalloonGameView.HEIGHT){
+        if(y < -canvas.getHeight()){
             y = 0;
         }
     }
     public void draw(Canvas canvas){
         canvas.drawBitmap(image, x, y, null);
         if(y < 0){
-            canvas.drawBitmap(image, x, y+BalloonGameView.HEIGHT, null);
+            canvas.drawBitmap(image, x, y+canvas.getHeight(), null);
         }
     }
     public void setVector(int dy){

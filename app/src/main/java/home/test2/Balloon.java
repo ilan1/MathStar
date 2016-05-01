@@ -24,7 +24,7 @@ public class Balloon extends GameObject {
         this.answer = answer;
         super.x = x;
         super.y = y;
-        speed = 10;
+        speed = rand.nextInt(7)+8;
         /*sprite array*/
         Bitmap[] balloon = new Bitmap[numFrames];
         image = res;
@@ -46,10 +46,11 @@ Log.i("tag", res.getHeight() + " " + res.getWidth());
             Paint answerPaint = new Paint();
             answerPaint.setTextAlign(Paint.Align.CENTER);
             answerPaint.setColor(Color.BLACK);
-            answerPaint.setTextSize(100);
+            answerPaint.setTextSize(85);
             answerPaint.setTypeface(Typeface.create(Typeface.SERIF, Typeface.BOLD));
-            canvas.drawBitmap(animation.getImage(),x,y,null);
-            canvas.drawText("4", x + 280, y + 440, answerPaint);
+            canvas.drawBitmap(animation.getImage(), x, y, null);
+            canvas.drawText(answer, animation.getImage().getWidth()/2 +x, animation.getImage().getHeight()*(4)/10 +y, answerPaint);
+
         }catch(Exception e){}
     }
 

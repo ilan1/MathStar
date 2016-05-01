@@ -302,7 +302,7 @@ public class QuizActivity extends AppCompatActivity {
      */
     public void showQuestion(){
 
-        questionView.setText(data.get(quiznums[currentQuestion]).getProblem());
+        questionView.setText((currentQuestion+1) + ". " + data.get(quiznums[currentQuestion]).getProblem());
     }
 
     public void displayResults(){

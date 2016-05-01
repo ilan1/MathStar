@@ -10,7 +10,7 @@
 		<subject>Algebra</subject>
 		<section>Linear Equations</section>
 		<problem>2x + 1 = 5</problem>
-		<answer>1</answer>
+		<answer>2</answer>
 		<id>2</id>
 	</question>
     <question>
@@ -247,70 +247,70 @@
     <question>
 		<subject>Geometry</subject>
 		<section>Classification of Angles</section>
-		<problem>A 180 degree angle is classified as</problem>
+		<problem>A 180 degree angle is/nclassified as</problem>
 		<answer>Straight</answer>
 		<id>36</id>
 	</question>
     <question>
 		<subject>Geometry</subject>
 		<section>Classification of Angles</section>
-		<problem>A 42 degree angle is classified as</problem>
+		<problem>A 42 degree angle is/nclassified as</problem>
 		<answer>Acute</answer>
 		<id>37</id>
 	</question>
     <question>
 		<subject>Geometry</subject>
 		<section>Classification of Angles</section>
-		<problem>A 90 degree angle is classified as</problem>
+		<problem>A 90 degree angle is/nclassified as</problem>
 		<answer>Right</answer>
 		<id>38</id>
 	</question>
     <question>
 		<subject>Geometry</subject>
 		<section>Classification of Angles</section>
-		<problem>A 100 degree angle is classified as </problem>
+		<problem>A 100 degree angle is/nclassified as </problem>
 		<answer>Obtuse</answer>
 		<id>39</id>
 	</question>
     <question>
 		<subject>Geometry</subject>
 		<section>Classification of Angles</section>
-		<problem>Straight lines are always what type of angle?</problem>
+		<problem>Straight lines are always/nwhat type of angle?</problem>
 		<answer>Straight</answer>
 		<id>40</id>
 	</question>
     <question>
 		<subject>Geometry</subject>
 		<section>Classification of Angles</section>
-		<problem>A 100 degree angle is classified as </problem>
+		<problem>A 100 degree angle is/nclassified as </problem>
 		<answer>Obtuse</answer>
 		<id>41</id>
 	</question>
     <question>
 		<subject>Geometry</subject>
 		<section>Classification of Angles</section>
-		<problem>A 172 degree angle is classified as </problem>
+		<problem>A 172 degree angle is/nclassified as </problem>
 		<answer>Obtuse</answer>
 		<id>42</id>
 	</question>
     <question>
 		<subject>Geometry</subject>
 		<section>Classification of Angles</section>
-		<problem>A 91 degree angle is classified as</problem>
+		<problem>A 91 degree angle is/nclassified as</problem>
 		<answer>Obtuse</answer>
 		<id>43</id>
 	</question>
     <question>
 		<subject>Geometry</subject>
 		<section>Classification of Angles</section>
-		<problem>A 45 degree angle is classified as</problem>
+		<problem>A 45 degree angle is/nclassified as</problem>
 		<answer>Acute</answer>
 		<id>44</id>
 	</question>
     <question>
 		<subject>Geometry</subject>
 		<section>Classification of Angles</section>
-		<problem>A 1 degree angle is classified as </problem>
+		<problem>A 1 degree angle is/nclassified as </problem>
 		<answer>Acute</answer>
 		<id>45</id>
 	</question>
