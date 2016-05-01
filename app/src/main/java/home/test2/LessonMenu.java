@@ -19,12 +19,6 @@ public class LessonMenu extends AppCompatActivity {
     public static String currentLesson;
     //A class-name tag for any Log calls
     private String tag = getClass().getSimpleName();
-    private RadioButton linearEquationsRadioButton;
-    private RadioButton algebraicFunctionRadioButton;
-    private RadioButton sequencesAndSeriesRadioButton;
-    private RadioButton classificationOfAnglesRadioButton;
-    private RadioButton measurementsOfPermietersAreaAndVolumeRadioButton;
-    private RadioButton rightTrianglesAndTrigonometryRadioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
@@ -161,30 +155,23 @@ public class LessonMenu extends AppCompatActivity {
 
     public void uncheckRadioButtons(String s)
     {
-        linearEquationsRadioButton  = (RadioButton) findViewById(R.id.linearequations);;
-        algebraicFunctionRadioButton = (RadioButton) findViewById(R.id.algebraicfunctions);
-        sequencesAndSeriesRadioButton = (RadioButton) findViewById(R.id.sequencesandseries);
-        classificationOfAnglesRadioButton = (RadioButton) findViewById(R.id.classofangles);
-        measurementsOfPermietersAreaAndVolumeRadioButton = (RadioButton) findViewById(R.id.measurements);
-        rightTrianglesAndTrigonometryRadioButton = (RadioButton) findViewById(R.id.trianglestrig);
-
         if( !(s.equals("LE"))) {
-            linearEquationsRadioButton.setChecked(false);
+            ((RadioButton) findViewById(R.id.linearequations)).setChecked(false);
         }
         if( !(s.equals("AF"))) {
-            algebraicFunctionRadioButton.setChecked(false);
+            ((RadioButton) findViewById(R.id.algebraicfunctions)).setChecked(false);
         }
         if( !(s.equals("SS"))) {
-            sequencesAndSeriesRadioButton.setChecked(false);
+            ((RadioButton) findViewById(R.id.sequencesandseries)).setChecked(false);
         }
         if( !(s.equals("CoA"))) {
-            classificationOfAnglesRadioButton.setChecked(false);
+            ((RadioButton) findViewById(R.id.classofangles)).setChecked(false);
         }
         if( !(s.equals("MPAV"))) {
-            measurementsOfPermietersAreaAndVolumeRadioButton.setChecked(false);
+            ((RadioButton) findViewById(R.id.measurements)).setChecked(false);
         }
         if( !(s.equals("RTT"))) {
-            rightTrianglesAndTrigonometryRadioButton.setChecked(false);
+            ((RadioButton) findViewById(R.id.trianglestrig)).setChecked(false);
         }
     }
 }
