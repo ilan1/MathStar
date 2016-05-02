@@ -121,8 +121,12 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
                             readyToClose = true;
                         }
                         incorrect = true;
+                        try{
                         Vibrator youralose = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-                        youralose.vibrate(300);
+                        youralose.vibrate(300);}
+                        catch(Exception e){
+
+                        }
                     }
                     Log.i("tag", "Clicked on balloon " + b.getX() + ", " + b.getY());
                     return super.onTouchEvent(event);
