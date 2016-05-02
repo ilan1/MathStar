@@ -250,7 +250,7 @@ public class QuizActivity extends AppCompatActivity {
                     if (currentQuestion != 10) {
                         submitButton.setText("CHECK");
                     }
-                } else if (submitButton.getText().toString().equalsIgnoreCase("FINISH")) {
+                } else if (submitButton.getText().toString().equalsIgnoreCase("RESULTS")) {
                     //open results
                     displayResults();
 
@@ -277,11 +277,6 @@ public class QuizActivity extends AppCompatActivity {
         d.setText("");
         currentQuestion++;
 
-        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        TextView progressBarText = (TextView) findViewById(R.id.progressBarText);
-        progressBar.setProgress(currentQuestion * 10);
-        progressBarText.setText(currentQuestion + " / 10");
-
         Log.v(tag + " currentQuestion", "" + currentQuestion);
         if(currentQuestion == 10){
             int leNum, afNum, ssNum, caNum, mpavNum, endNum = 0;
@@ -292,7 +287,7 @@ public class QuizActivity extends AppCompatActivity {
             boolean mpavMax = true;
             boolean endMax = true;
             questionView.setText("Congrats you got " + correct + " questions correct.");
-            submitButton.setText("Finish");
+            submitButton.setText("Results");
             d.setVisibility(View.GONE);
         }
         else
@@ -314,6 +309,8 @@ public class QuizActivity extends AppCompatActivity {
      */
     public void showQuestion(){
 
+        TextView questionToolBarTitle = (TextView) findViewById(R.id.questionToolBarTitle);
+        questionToolBarTitle.setText("Question " + (currentQuestion+1) + " / 10");
         questionView.setText((currentQuestion+1) + ". " + data.get(quiznums[currentQuestion]).getProblem());
     }
 

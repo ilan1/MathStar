@@ -28,43 +28,13 @@
         android:layout_alignParentEnd="true"
         android:singleLine="true"/>
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Check"
         android:id="@+id/submitButton"
         android:layout_marginBottom="122dp"
-        android:layout_above="@+id/progressBar"
-        android:layout_alignParentEnd="true" />
-
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="51dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_centerHorizontal="true"
-        style="@android:style/Widget.ProgressBar.Horizontal"/>
-
-    <TextView
-        android:background="#00000000"
-        android:layout_height="@+id/progressBar"
-        android:layout_width="@+id/progressBar"
-        android:layout_alignLeft="@+id/progressBar"
-        android:layout_alignTop="@+id/progressBar"
-        android:layout_alignRight="@+id/progressBar"
-        android:layout_alignBottom="@+id/progressBar"
-        android:id="@+id/progressBarText"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:id="@+id/quitButton"
-        android:layout_alignTop="@+id/submitButton"
-        android:layout_alignParentStart="true" />
-
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
