@@ -1,25 +1,21 @@
 package home.test2;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class TimerGame extends AppCompatActivity {
-
-    TextView timerview;
-     Timer timer;
-    int interval;
-    int secs = 1000;
-    int score = 0;
-
     ArrayList<String> sections;
     List<Question> data = Data.getInstance().getData();
     int[] timerNums = new int[10];
@@ -31,7 +27,7 @@ public class TimerGame extends AppCompatActivity {
     Button answer2;
     Button answer3;
     Button answer4;
-    int timerValue;
+    int timerValue = 30;
     int scoreValue = 0;
     int j = 0;
     int right;
@@ -56,21 +52,29 @@ public class TimerGame extends AppCompatActivity {
 
         quitButton = (Button) findViewById(R.id.quitButton);
 
-//        timer = new Timer();
-//        interval = secs;
-//        timer.scheduleAtFixedRate(new TimerTask() {
-//            int i = interval;
-//            public void run() {
-//                System.out.println(i--);
-//                if (i< 0)
-//                {
-//                    timerview.setText("Sorry your time is up and your score is: " +  score);
-//                    timer.cancel();
-//
-//
-//                }
-//            }
-//        }, 0, 1000);
+        final Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable(){
+                    @Override
+                    public void run(){
+                        if(timerValue == 0){
+                            showNextQuestion(0);
+                            timer.cancel();
+                        }
+                        else {
+                            timerValue -= 1;
+                            timerValueText.setText("" + timerValue);
+                            answer1.setBackgroundColor(Color.rgb(211,211,211));
+                            answer2.setBackgroundColor(Color.rgb(211,211,211));
+                            answer3.setBackgroundColor(Color.rgb(211,211,211));
+                            answer4.setBackgroundColor(Color.rgb(211,211,211));
+                        }
+                    }
+                });
+            }
+        }, 0, 1000);
 
         quizIntent = getIntent();
         sections = quizIntent.getStringArrayListExtra("sectionArray");
@@ -79,31 +83,29 @@ public class TimerGame extends AppCompatActivity {
             for (int i = 0; i <= 9; i++) {
                 timerNums[i] = 16 + i;
             }
-
         }
-        else
-        {
+        else {
             for (int i = 0; i <= 9; i++) {
                 timerNums[i] = 56 + i;
-            }        }
+            }
+        }
         gen(j);
     }
 
     public void gen(int j) {
         quitButton = (Button) findViewById(R.id.quitButton);
-        scoreValueText.setText(scoreValue);
+        scoreValueText = (EditText) findViewById(R.id.scoreValueText);
+        questionView = (EditText) findViewById(R.id.questionView);
+        scoreValueText.setText(""+scoreValue);
 
-        if(timerValue == 0)
-        {
-            questionView.setText("Sorry your time is up and your score is: " +  scoreValue);
-            quitButton.setText("FINISH");
-        }
-        else if (j == 10)
-        {
+        if (j == 10) {
             questionView.setText("You finished all of the questions with a score of: " + scoreValue);
-            quitButton.setText("FINISH");
+            finishGame();
         }
-
+        else if(timerValue == 0) {
+            questionView.setText("Sorry your time is up and your score is: " +  scoreValue);
+            finishGame();
+        }
         else{
 
             questionView.setText(""+data.get(timerNums[j]).getProblem());
@@ -219,6 +221,18 @@ public class TimerGame extends AppCompatActivity {
         }
     }
 
+    public void finishGame(){
+        answer1.setText("");
+        answer2.setText("");
+        answer3.setText("");
+        answer4.setText("");
+        answer1.setBackgroundColor(Color.rgb(211,211,211));
+        answer2.setBackgroundColor(Color.rgb(211,211,211));
+        answer3.setBackgroundColor(Color.rgb(211,211,211));
+        answer4.setBackgroundColor(Color.rgb(211,211,211));
+        quitButton.setText("FINISH");
+    }
+
     public void showNextQuestion(int j){
         gen(j);
     }
@@ -226,36 +240,52 @@ public class TimerGame extends AppCompatActivity {
     public void checkAnswer1(){
         if (right == 0)
         {
-            j++;
+            answer1.setBackgroundColor(Color.GREEN);
             scoreValue += 1;
         }
+        else{
+            answer1.setBackgroundColor(Color.RED);
+        }
+        j++;
         showNextQuestion(j);
     }
 
     public void checkAnswer2(){
         if (right == 1)
         {
-            j++;
+            answer2.setBackgroundColor(Color.GREEN);
             scoreValue += 1;
         }
+        else{
+            answer2.setBackgroundColor(Color.RED);
+        }
+        j++;
         showNextQuestion(j);
     }
 
     public void checkAnswer3(){
         if (right == 2)
         {
-            j++;
+            answer3.setBackgroundColor(Color.GREEN);
             scoreValue += 1;
         }
+        else{
+            answer3.setBackgroundColor(Color.RED);
+        }
+        j++;
         showNextQuestion(j);
     }
 
     public void checkAnswer4(){
         if (right == 3)
         {
-            j++;
+            answer4.setBackgroundColor(Color.GREEN);
             scoreValue += 1;
         }
+        else{
+            answer4.setBackgroundColor(Color.RED);
+        }
+        j++;
         showNextQuestion(j);
     }
 }
