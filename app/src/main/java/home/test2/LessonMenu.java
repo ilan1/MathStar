@@ -2,6 +2,7 @@ package home.test2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -21,6 +22,7 @@ public class LessonMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
+
 
         getIntent().removeExtra("sectionArray");
         super.onCreate(savedInstanceState);
@@ -88,6 +90,7 @@ public class LessonMenu extends AppCompatActivity {
      * Saves section selection settings from checkboxes
      * @param v - a view that encapsulates checkboxes
      */
+
     public void selectSection(View v){
         boolean checked = ((RadioButton) v).isChecked();
         switch(v.getId())
@@ -95,7 +98,8 @@ public class LessonMenu extends AppCompatActivity {
             case R.id.linearequations:
                 if(checked){
                     sections.clear();
-                    sections.add("Linear Equations");}
+                    sections.add("Linear Equations");
+                    uncheckRadioButtons("LE");}
                 else{
                     sections.remove("Linear Equations");
                     break;}
@@ -103,7 +107,8 @@ public class LessonMenu extends AppCompatActivity {
             case R.id.algebraicfunctions:
                 if(checked){
                     sections.clear();
-                    sections.add("Algebraic Functions");}
+                    sections.add("Algebraic Functions");
+                    uncheckRadioButtons("AF");}
                 else{
                     sections.remove("Algebraic Functions");
                     break;}
@@ -111,7 +116,8 @@ public class LessonMenu extends AppCompatActivity {
             case R.id.sequencesandseries:
                 if(checked){
                     sections.clear();
-                    sections.add("Sequences and Series");}
+                    sections.add("Sequences and Series");
+                    uncheckRadioButtons("SS");}
                 else{
                     sections.remove("Sequences and Series");
                     break;}
@@ -119,7 +125,8 @@ public class LessonMenu extends AppCompatActivity {
             case R.id.classofangles:
                 if(checked){
                     sections.clear();
-                    sections.add("Classification of Angles");}
+                    sections.add("Classification of Angles");
+                    uncheckRadioButtons("CoA");}
                 else{
                     sections.remove("Classification of Angles");
                     break;}
@@ -127,7 +134,8 @@ public class LessonMenu extends AppCompatActivity {
             case R.id.measurements:
                 if(checked){
                     sections.clear();
-                    sections.add("Measurements of Perimeters, Area, and Volume");}
+                    sections.add("Measurements of Perimeters, Area, and Volume");
+                    uncheckRadioButtons("MPAV");}
                 else{
                     sections.remove("Measurements of Perimeters, Area, and Volume");
                     break;}
@@ -135,12 +143,35 @@ public class LessonMenu extends AppCompatActivity {
             case R.id.trianglestrig:
                 if(checked){
                     sections.clear();
-                    sections.add("Right Triangles and Trigonometry");}
+                    sections.add("Right Triangles and Trigonometry");
+                    uncheckRadioButtons("RTT");}
                 else{
                     sections.remove("Right Triangles and Trigonometry");
                     break;}
                 break;
 
+        }
+    }
+
+    public void uncheckRadioButtons(String s)
+    {
+        if( !(s.equals("LE"))) {
+            ((RadioButton) findViewById(R.id.linearequations)).setChecked(false);
+        }
+        if( !(s.equals("AF"))) {
+            ((RadioButton) findViewById(R.id.algebraicfunctions)).setChecked(false);
+        }
+        if( !(s.equals("SS"))) {
+            ((RadioButton) findViewById(R.id.sequencesandseries)).setChecked(false);
+        }
+        if( !(s.equals("CoA"))) {
+            ((RadioButton) findViewById(R.id.classofangles)).setChecked(false);
+        }
+        if( !(s.equals("MPAV"))) {
+            ((RadioButton) findViewById(R.id.measurements)).setChecked(false);
+        }
+        if( !(s.equals("RTT"))) {
+            ((RadioButton) findViewById(R.id.trianglestrig)).setChecked(false);
         }
     }
 }

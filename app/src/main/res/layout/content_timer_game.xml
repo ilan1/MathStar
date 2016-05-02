@@ -11,7 +11,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="home.test2.TimerGame"
     tools:showIn="@layout/activity_timer_game"
-    android:clickable="false">
+    android:clickable="false"
+    android:background="@drawable/dusk">
 
     <EditText
         android:layout_width="wrap_content"
@@ -20,17 +21,20 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:editable="false"/>
+        android:editable="false"
+        android:textColor="#ffffff" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/timeText"
         android:layout_marginBottom="63dp"
-        android:text="Time: "
+        android:text="Time Remaining: "
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:editable="false" />
+        android:editable="false"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -44,7 +48,9 @@
         android:layout_alignParentBottom="false"
         android:layout_alignParentLeft="false"
         android:text="30"
-        android:editable="false"/>
+        android:editable="false"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -53,7 +59,9 @@
         android:text="Score:"
         android:layout_alignTop="@+id/timerValueText"
         android:layout_toStartOf="@+id/scoreValueText"
-        android:editable="false"/>
+        android:editable="false"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -62,7 +70,9 @@
         android:text="0"
         android:layout_alignTop="@+id/ScoreText"
         android:layout_alignParentEnd="true"
-        android:editable="false"/>
+        android:editable="false"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -84,7 +94,18 @@
                 android:text="1"
                 android:id="@+id/answer1"
                 android:layout_column="0"
-                android:layout_weight=".5"/>
+                android:layout_weight=".4"
+                android:background="#d3d3d3"
+                android:allowUndo="true"
+                android:layout_gravity="left" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="   "
+                android:id="@+id/textView3"
+                android:layout_column="30" />
 
             <Button
                 android:layout_width="0dp"
@@ -92,7 +113,10 @@
                 android:text="2"
                 android:id="@+id/answer2"
                 android:layout_column="20"
-                android:layout_weight=".5"/>
+                android:layout_weight=".4"
+                android:background="#d3d3d3"
+                android:layout_gravity="right" />
+
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -105,7 +129,16 @@
                 android:text="3"
                 android:id="@+id/answer3"
                 android:layout_column="0"
-                android:layout_weight=".5" />
+                android:layout_weight=".5"
+                android:background="#d3d3d3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="   "
+                android:id="@+id/textView4"
+                android:layout_column="30" />
 
             <Button
                 android:layout_width="0dp"
@@ -113,7 +146,8 @@
                 android:text="4"
                 android:id="@+id/answer4"
                 android:layout_column="20"
-                android:layout_weight=".5"/>
+                android:layout_weight=".5"
+                android:background="#d3d3d3" />
         </TableRow>
     </TableLayout>
 

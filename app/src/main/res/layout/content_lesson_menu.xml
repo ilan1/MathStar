@@ -22,11 +22,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
         android:textAppearance="?android:textAppearanceLarge"
         android:text="Algebra"
         android:id="@+id/textView"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:layout_marginTop="31dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -36,7 +40,7 @@
         android:layout_below="@+id/textView"
         android:layout_alignStart="@+id/textView"
         android:onClick="selectSection"
-        />
+        android:checked="false" />
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -83,8 +87,8 @@
     android:text="@string/trianglestrig"
     android:id="@+id/trianglestrig"
     android:onClick="selectSection"
-        android:layout_below="@+id/classofangles"
-        android:layout_alignStart="@+id/classofangles" />
+        android:layout_below="@+id/measurements"
+        android:layout_alignStart="@+id/measurements" />
 
     <RadioButton
     android:layout_width="wrap_content"
@@ -92,8 +96,8 @@
     android:text="@string/measurements"
     android:id="@+id/measurements"
     android:onClick="selectSection"
-        android:layout_below="@+id/trianglestrig"
-        android:layout_alignStart="@+id/trianglestrig" />
+        android:layout_below="@+id/classofangles"
+        android:layout_alignStart="@+id/classofangles" />
 
     <RadioButton
     android:layout_width="wrap_content"
