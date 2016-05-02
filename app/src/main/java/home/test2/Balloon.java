@@ -24,7 +24,7 @@ public class Balloon extends GameObject {
         this.answer = answer;
         super.x = x;
         super.y = y;
-        speed = rand.nextInt(7)+8;
+        speed = 10;
         /*sprite array*/
         Bitmap[] balloon = new Bitmap[numFrames];
         image = res;

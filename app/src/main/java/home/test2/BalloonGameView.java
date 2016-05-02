@@ -200,7 +200,7 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
             textPaint.setTextSize(100);
         }
         else {
-            textPaint.setTextSize(65);
+            textPaint.setTextSize(45);
         }
         textPaint.setTypeface(Typeface.create(Typeface.SERIF, Typeface.BOLD));
 
@@ -210,7 +210,7 @@ public class BalloonGameView extends SurfaceView implements SurfaceHolder.Callba
                canvas.drawText("Click anywhere to quit.", xPos, yPos + 100, textPaint);
            }
            else {
-               canvas.drawText("Click anywhere to quit.", xPos, yPos + 65, textPaint);
+               canvas.drawText("Click anywhere to quit.", xPos, yPos + 45, textPaint);
            }
 
         }

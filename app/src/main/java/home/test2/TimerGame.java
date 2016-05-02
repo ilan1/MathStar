@@ -63,6 +63,8 @@ public class TimerGame extends AppCompatActivity {
                             showNextQuestion(0);
                             timer.cancel();
                         }
+                        if(answer1.getText().equals(""))
+                        {timer.cancel();}
                         else {
                             timerValue -= 1;
                             timerValueText.setText("" + timerValue);
@@ -81,12 +83,12 @@ public class TimerGame extends AppCompatActivity {
 
         if (sections.contains("Algebraic Functions")) {
             for (int i = 0; i <= 9; i++) {
-                timerNums[i] = 16 + i;
+                timerNums[i] = 15 + i;
             }
         }
         else {
             for (int i = 0; i <= 9; i++) {
-                timerNums[i] = 56 + i;
+                timerNums[i] = 55 + i;
             }
         }
         gen(j);
@@ -226,6 +228,7 @@ public class TimerGame extends AppCompatActivity {
         answer2.setText("");
         answer3.setText("");
         answer4.setText("");
+
         answer1.setBackgroundColor(Color.rgb(211,211,211));
         answer2.setBackgroundColor(Color.rgb(211,211,211));
         answer3.setBackgroundColor(Color.rgb(211,211,211));
